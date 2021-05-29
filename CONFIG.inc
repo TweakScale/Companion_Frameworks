@@ -1,7 +1,7 @@
 source ../CONFIG.inc
 
-PACKAGE=TweakScaleCompanion_EyeCandies
-TARGETDIR="TweakScaleCompanion/EyeCandies"
+PACKAGE=TweakScaleCompanion_Visuals
+TARGETDIR="TweakScaleCompanion/Visuals"
 TARGETBINDIR="$TARGETDIR"
 PROJECTSDIR="$PACKAGE/"
 
@@ -10,10 +10,10 @@ DLLS=""
 PROJECT_BRANCH=`git branch | grep \* | cut -d ' ' -f2`
 if [ "$PROJECT_BRANCH" == "master" ] ; then
 	# Release mode
-	PROJECT_STATE="Alpha"
+	PROJECT_STATE="-Alpha"
 else
 	# Note: Add a leading dash when this value is present!
-	PROJECT_STATE="Alpha"
+	PROJECT_STATE="-Alpha"
 fi
 
 VERSION=$( cat $PACKAGE.version | tr '\n' ' ' | sed -n -E 's/^.*?"VERSION\":\{.*"MAJOR":([0-9]+?),.*?"MINOR":([0-9]+?),.*?"PATCH":([0-9]+?),.*?"BUILD":([0-9]+?).*?\}.*$/\1.\2.\3.\4/p' )
