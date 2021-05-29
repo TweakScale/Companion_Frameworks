@@ -1,4 +1,4 @@
-# TweakScale Companion :: Eye Candies
+# TweakScale Companion :: Visuals
 
 Adds (up to date) TweakScale /L patches for some Visual Enhancing Add'Ons.
 
@@ -8,9 +8,9 @@ Adds (up to date) TweakScale /L patches for some Visual Enhancing Add'Ons.
 To install, place the GameData folder inside your Kerbal Space Program folder:
 
 * **REMOVE ANY OLD VERSIONS OF THE PRODUCT BEFORE INSTALLING**, including any other fork:
-	+ Delete `<KSP_ROOT>/GameData/TweakScaleCompanion/EyeCandies`
+	+ Delete `<KSP_ROOT>/GameData/TweakScaleCompanion/Visuals`
 * Extract the package's `GameData/` folder into your KSP's as follows:
-	+ `<PACKAGE>/GameData/TweakScaleCompanion/EyeCandies` --> `<KSP_ROOT>/GameData/TweakScaleCompanion`
+	+ `<PACKAGE>/GameData/TweakScaleCompanion/Visuals` --> `<KSP_ROOT>/GameData/TweakScaleCompanion`
 		- Overwrite any preexisting file.
 
 The following file layout must be present after installation:
@@ -38,7 +38,7 @@ The following file layout must be present after installation:
 		...
 		[TweakScaleCompanion]
 			[...]
-			[EyeCandies]
+			[Visuals]
 				CHANGE_LOG.md
 				LICENSE*
 				NOTICE
@@ -60,4 +60,3 @@ The following file layout must be present after installation:
 	+ **NOT** included 
 * Module Manager 3.1.3 or later
 	+ **NOT** included
-

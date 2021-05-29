@@ -1,20 +1,20 @@
-# TweakScale Companion :: Eye Candies
+# TweakScale Companion :: Visuals
 
 Adds (up to date) TweakScale /L patches for some Visual Enhancing Add'Ons.
 
 ## In a Hurry
 
-* [Source](https://github.com/net-lisias-ksp/TweakScaleCompanion_EyeCandies)
-	+ [Issue Tracker](https://github.com/net-lisias-ksp/TweakScaleCompanion_EyeCandies/issues)
+* [Source](https://github.com/net-lisias-ksp/TweakScaleCompanion_Visuals)
+	+ [Issue Tracker](https://github.com/net-lisias-ksp/TweakScaleCompanion_Visuals/issues)
 * Documentation
 	+ [Forum](https://forum.kerbalspaceprogram.com/index.php?/topic/192216-tweakscale-companion-program/)
-	+ [Project's README](https://github.com/net-lisias-ksp/TweakScaleCompanion_EyeCandies/blob/master/README.md)
-	+ [Install Instructions](https://github.com/net-lisias-ksp/TweakScaleCompanion_EyeCandies/blob/master/INSTALL.md)
+	+ [Project's README](https://github.com/net-lisias-ksp/TweakScaleCompanion_Visuals/blob/master/README.md)
+	+ [Install Instructions](https://github.com/net-lisias-ksp/TweakScaleCompanion_Visuals/blob/master/INSTALL.md)
 	+ [Change Log](./CHANGE_LOG.md)
 * Official Distribution Sites:
 	+ [Source and Binaries](https://github.com/net-lisias-ksp/TweakScaleCompanion_OPT) on GitHub.
-	+ [Latest Release](https://github.com/net-lisias-ksp/TweakScaleCompanion_EyeCandies/releases)
-		- [Binaries](https://github.com/net-lisias-ksp/TweakScaleCompanion_EyeCandies/Archive)
+	+ [Latest Release](https://github.com/net-lisias-ksp/TweakScaleCompanion_Visuals/releases)
+		- [Binaries](https://github.com/net-lisias-ksp/TweakScaleCompanion_Visuals/Archive)
 
 
 ## Description
@@ -63,6 +63,8 @@ See [NOTICE](./NOTICE) for further copyright and trademarks notices.
 
 ## UPSTREAM
 
+There's no upstream, I'm (g)ROOT. :)
+
 ## Refences
 
 * TweakScale /L ([LisiasT](https://forum.kerbalspaceprogram.com/index.php?/profile/187168-lisias/))
@@ -72,4 +74,5 @@ See [NOTICE](./NOTICE) for further copyright and trademarks notices.
 	+ [Homepage](http://ksp.lisias.net/add-ons/TweakScale) on L Aerospace
 	+ [GitHub](https://github.com/net-lisias-ksp/TweakScale).
 * Waterfall ([Nertea](https://forum.kerbalspaceprogram.com/index.php?/profile/83952-nertea/))
-	+ [Forum](https://forum.kerbalspaceprogram.com/index.php?/topic/196309-*)	+ [GitHub](https://github.com/post-kerbin-mining-corporation/Waterfall).
+	+ [Forum](https://forum.kerbalspaceprogram.com/index.php?/topic/196309-*)
+		+ [GitHub](https://github.com/post-kerbin-mining-corporation/Waterfall).

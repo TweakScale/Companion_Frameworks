@@ -1,2 +1,2 @@
-# # TweakScale Companion :: Eye Candies :: Change Log
+# # TweakScale Companion :: Visuals :: Change Log
 
