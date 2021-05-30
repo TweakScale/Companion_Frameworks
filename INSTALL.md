@@ -54,7 +54,7 @@ The following file layout must be present after installation:
 
 ### Dependencies
 
-* TweakScale /L 2.4.4 or later
+* TweakScale /L 2.4.5 or later
 	+ **NOT** included
 * Waterfall
 	+ **NOT** included 
