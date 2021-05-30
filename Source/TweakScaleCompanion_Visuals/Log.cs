@@ -21,7 +21,7 @@ using System.Diagnostics;
 using System.Collections.Generic;
 #endif
 
-namespace TweakScaleCompanion.EyeCandies
+namespace TweakScaleCompanion.Visuals
 {
 	public static class Log
 	{

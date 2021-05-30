@@ -23,7 +23,7 @@
 using System;
 using UnityEngine;
 
-namespace TweakScaleCompanion.EyeCandies
+namespace TweakScaleCompanion.Visuals
 {
 	[KSPAddon(KSPAddon.Startup.Instantly, true)]
 	internal class Startup : MonoBehaviour

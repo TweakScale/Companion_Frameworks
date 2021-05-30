@@ -5,10 +5,10 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{4A788998-5329-475F-BE34-1521F5DF78EB}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>TweakScaleCompanion_EyeCandies</RootNamespace>
-    <AssemblyName>TweakScaleCompanion_EyeCandies</AssemblyName>
+    <RootNamespace>TweakScaleCompanion.Visuals</RootNamespace>
+    <AssemblyName>TweakScaleCompanion_Visuals</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <BaseIntermediateOutputPath>..\..\obj\TweakScaleCompanion_EyeCandies</BaseIntermediateOutputPath>
+    <BaseIntermediateOutputPath>..\..\obj\$(AssemblyName)</BaseIntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,16 +30,16 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\..\..\..\..\LIB\managed\1.4.0\Assembly-CSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="KSPe.Light.TweakScale">
-      <HintPath>..\..\..\..\..\..\LIB\plugins\KSPe.Light.TweakScale.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>..\..\..\..\..\..\LIB\managed\1.4.0\UnityEngine.UI.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\LIB\managed\1.4.0\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine">
-      <HintPath>..\..\..\..\..\..\LIB\managed\1.4.0\UnityEngine.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\LIB\managed\1.4.0\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>..\..\..\..\..\..\..\LIB\managed\1.4.0\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="KSPe.Light.TweakScale">
+      <HintPath>..\..\..\..\..\..\..\LIB\plugins\KSPe.Light.TweakScale.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

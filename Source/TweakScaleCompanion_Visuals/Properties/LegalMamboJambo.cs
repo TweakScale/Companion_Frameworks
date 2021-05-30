@@ -21,13 +21,13 @@
 //
 // */
 using System;
-namespace TweakScaleCompanion.EyeCandies
+namespace TweakScaleCompanion.Visuals
 {
 	public static class LegalMamboJambo
 	{
 		public const string Company = "L Aerospace KSP Division";
 		public const string Copyight = "© 2021 LisiasT";
-		public const string Product = "TweakScale Companion for Eye Candies";
+		public const string Product = "TweakScale Companion for Visuals";
 		public const string Trademark = "TweakScale™, TweakScale Companion™ by LisiasT";
 	}
 }

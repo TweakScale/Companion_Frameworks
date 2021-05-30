@@ -25,7 +25,7 @@ using System.Collections;
 
 using UnityEngine;
 
-namespace TweakScaleCompanion.EyeCandies
+namespace TweakScaleCompanion.Visuals
 {
 	[KSPAddon(KSPAddon.Startup.MainMenu, true)]
 	internal class SanityCheck : MonoBehaviour
