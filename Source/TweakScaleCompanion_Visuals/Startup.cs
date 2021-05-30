@@ -35,7 +35,7 @@ namespace TweakScaleCompanion.Visuals
 
 			try
 			{
-				KSPe.Util.Installation.Check<Startup>("TweakScaleCompanion", "EyeCandies", null);
+				KSPe.Util.Installation.Check<Startup>("TweakScaleCompanion_Visuals", "TweakScaleCompanion/Visuals", null);
 			}
 			catch (KSPe.Util.InstallmentException e)
 			{
@@ -53,10 +53,10 @@ namespace TweakScaleCompanion.Visuals
 			foreach (AssemblyLoader.LoadedAssembly assembly in AssemblyLoader.loadedAssemblies) if ("Scale" == assembly.assembly.GetName().Name)
 			{
 				Log.detail("Found {0}", assembly.assembly.FullName);
-				if (assembly.assembly.GetName().Version.CompareTo(new System.Version(2, 4, 4)) >= 0) return;
+				if (assembly.assembly.GetName().Version.CompareTo(new System.Version(2, 4, 5)) >= 0) return;
 				break;
 			}
-			GUI.UnmetRequirementsShowStopperAlertBox.Show("TweakScale v2.4.4 or superior");
+			GUI.UnmetRequirementsShowStopperAlertBox.Show("TweakScale v2.4.5 or superior");
 		}
 	}
 }

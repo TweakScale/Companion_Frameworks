@@ -1,6 +1,6 @@
 source ../CONFIG.inc
 
-PACKAGE=TweakScaleCompanion_Visuals
+PACKAGE=TweakScaleCompanion.Visuals
 TARGETDIR="TweakScaleCompanion/Visuals"
 TARGETBINDIR="$TARGETDIR"
 PROJECTSDIR="$PACKAGE/"

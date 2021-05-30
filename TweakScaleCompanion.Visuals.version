@@ -1,13 +1,13 @@
 {
-	"NAME"		: "TweakScale Companion EyeCandies /L Unofficial",
-	"URL"		: "https://raw.githubusercontent.com/net-lisias-ksp/TweakScaleCompanion_EyeCandies/master/TweakScaleCompanion_EyeCandies.version",
-	"DOWNLOAD"	: "https://github.com/net-lisias-ksp/TweakScaleCompanion_EyeCandies/releases",
-	"CHANGE_LOG"	: "https://raw.githubusercontent.com/net-lisias-ksp/TweakScaleCompanion_EyeCandies/master/CHANGE_LOG.md",
-	"CHANGE_LOG_URL": "https://raw.githubusercontent.com/net-lisias-ksp/TweakScaleCompanion_EyeCandies/master/CHANGES.md",
+	"NAME"		: "TweakScale Companion for Visuals",
+	"URL"		: "https://raw.githubusercontent.com/net-lisias-ksp/TweakScaleCompanion_Visuals/master/TweakScaleCompanion_Visuals.version",
+	"DOWNLOAD"	: "https://github.com/net-lisias-ksp/TweakScaleCompanion_Visuals/releases",
+	"CHANGE_LOG"	: "https://raw.githubusercontent.com/net-lisias-ksp/TweakScaleCompanion_Visuals/master/CHANGE_LOG.md",
+	"CHANGE_LOG_URL": "https://raw.githubusercontent.com/net-lisias-ksp/TweakScaleCompanion_Visuals/master/CHANGES.md",
 	"VERSION":{
 		"MAJOR":0,
 		"MINOR":0,
-		"PATCH":0,
+		"PATCH":1,
 		"BUILD":0
 		},
 	"KSP_VERSION_MIN":{

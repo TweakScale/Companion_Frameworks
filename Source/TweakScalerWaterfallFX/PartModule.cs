@@ -29,7 +29,7 @@ using ModuleWaterfallFX = global::Waterfall.ModuleWaterfallFX;
 
 namespace TweakScaleCompanion.Visuals.Waterfall
 {
-	public class TweakScalerModuleWaterfallFX : PartModule, IRescalable
+	public class TweakScalerWaterfallFX : PartModule, IRescalable
 	{
 		private class Data
 		{
@@ -37,7 +37,7 @@ namespace TweakScaleCompanion.Visuals.Waterfall
 			public readonly Vector3 meshScale;
 			public readonly Vector3 position;
 
-			public Data(global::Waterfall.WaterfallEffect fx, TweakScalerModuleWaterfallFX myself)
+			public Data(global::Waterfall.WaterfallEffect fx, TweakScalerWaterfallFX myself)
 			{
 				this.fx = fx;
 				this.meshScale = fx.TemplateScaleOffset;
@@ -202,9 +202,9 @@ namespace TweakScaleCompanion.Visuals.Waterfall
 			data.fx.ApplyTemplateOffsets(data.position, data.fx.TemplateRotationOffset, data.meshScale * factor.absolute.linear);
 		}
 
-		private static KSPe.Util.Log.Logger Log = KSPe.Util.Log.Logger.CreateForType<TweakScalerModuleWaterfallFX>("TweakScaleCompanion_Visuals", "TweakScalerWaterfallFX");
+		private static KSPe.Util.Log.Logger Log = KSPe.Util.Log.Logger.CreateForType<TweakScalerWaterfallFX>("TweakScaleCompanion_Visuals", "TweakScalerWaterfallFX");
 
-		static TweakScalerModuleWaterfallFX()
+		static TweakScalerWaterfallFX()
 		{
 			Log.level =
 #if DEBUG
@@ -216,11 +216,11 @@ namespace TweakScaleCompanion.Visuals.Waterfall
 		}
 	}
 
-	public class Scaler : TweakScale.IRescalable<TweakScalerModuleWaterfallFX>
+	public class Scaler : TweakScale.IRescalable<TweakScalerWaterfallFX>
 	{
 		private readonly TweakScale.IRescalable pm;
 
-		public Scaler(TweakScalerModuleWaterfallFX pm)
+		public Scaler(TweakScalerWaterfallFX pm)
 		{
 			this.pm = pm;
 		}

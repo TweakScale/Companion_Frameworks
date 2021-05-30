@@ -27,7 +27,7 @@ namespace TweakScaleCompanion.Visuals.GUI
 {
     internal class UnmetRequirementsShowStopperAlertBox
     {
-        private static readonly string MSG = @"Unfortunately TweakScale Companion for Eye Candies is unable to proceed due unmet requiments!
+        private static readonly string MSG = @"Unfortunately TweakScale Companion for Visuals is unable to proceed due unmet requiments!
 
 You need to have {0} installed, otherwise this Companion will fail to install itself, and the Assembly will probably crash while running - what can compromise your savegame.
 

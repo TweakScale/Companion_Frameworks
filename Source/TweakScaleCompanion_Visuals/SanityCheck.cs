@@ -33,7 +33,7 @@ namespace TweakScaleCompanion.Visuals
 		private static readonly int WAIT_ROUNDS = 120; // @60fps, would render 2 secs.
 
 		private const string TARGET_MODULE_NAME = "ModuleWaterfallFX";
-		private const string SCALER_MODULE_NAME = "TweakScalerModuleWaterfallFX";
+		private const string SCALER_MODULE_NAME = "TweakScalerWaterfallFX";
 
 		internal static bool isConcluded = false;
 
@@ -122,7 +122,7 @@ namespace TweakScaleCompanion.Visuals
 					{
 						string due = null;
 
-						if (containsInventoryScaler && (null != (due = this.checkForInventory(prefab))))
+						if (containsInventoryScaler && (null != (due = this.checkForWaterfall(prefab))))
 						{
 							Log.info("Removing {0} support for {1} ({2}) due {3}.", SCALER_MODULE_NAME, p.name, p.title, due);
 							prefab.RemoveModule(prefab.Modules[SCALER_MODULE_NAME]);
@@ -157,7 +157,7 @@ namespace TweakScaleCompanion.Visuals
 		private const string MSG_KSP_NO_SUPPORTED = "your KSP version doesn't need it.";
 		private const string MSG_PART_DOES_NOT_NEED = "this part doesn't need it.";
 		private const string MSG_PART_NOT_SUPPORTED = "this part is not supported.";
-		private string checkForInventory(Part p)
+		private string checkForWaterfall(Part p)
 		{
 			Log.dbg("Checking {0} Sanity for {1} at {2}", SCALER_MODULE_NAME, p.name, (null != p.partInfo ? p.partInfo.partUrl : "<no partInfo>"));
 

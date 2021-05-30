@@ -6,7 +6,7 @@
     <ProjectGuid>{AB40E88E-D360-4EC4-8676-8A0B7225FD02}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>TweakScalerWaterfallFX</RootNamespace>
-    <AssemblyName>TweakScalereWaterfallFX</AssemblyName>
+    <AssemblyName>TweakScalerWaterfallFX</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <BaseIntermediateOutputPath>..\..\obj\$(AssemblyName)</BaseIntermediateOutputPath>
   </PropertyGroup>
@@ -45,8 +45,7 @@
     <Reference Include="UnityEngine.TextRenderingModule">
       <HintPath>..\..\..\..\..\..\..\LIB\managed\1.8.0\UnityEngine.TextRenderingModule.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Core
-    Module">
+    <Reference Include="UnityEngine.Core&#xA;    Module">
       <HintPath>..\..\..\..\..\..\..\LIB\managed\1.8.0\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine">
