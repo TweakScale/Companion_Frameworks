@@ -37,7 +37,7 @@ namespace TweakScaleCompanion.Visuals.Waterfall
 			public readonly Vector3 meshScale;
 			public readonly Vector3 position;
 
-			public Data(global::Waterfall.WaterfallEffect fx)
+			public Data(global::Waterfall.WaterfallEffect fx, TweakScalerModuleWaterfallFX myself)
 			{
 				this.fx = fx;
 				this.meshScale = fx.TemplateScaleOffset;
@@ -63,7 +63,7 @@ namespace TweakScaleCompanion.Visuals.Waterfall
 		#endregion
 
 		private TweakScale.TweakScale tweakscale;
-		private ModuleWaterfallFX targetPartModule;
+		private ModuleWaterfallFX[] targetPartModules;
 		private readonly List<Data> originalFx = new List<Data>();
 
 		private bool IsRestoreNeeded = false;
@@ -84,7 +84,7 @@ namespace TweakScaleCompanion.Visuals.Waterfall
 
 			// Needed because I can't intialize this on OnAwake as this module can be awaken before ModuleWaterfallFX or TweakScale,
 			// and OnRescale can be fired before OnLoad.
-			if (null == this.targetPartModule) this.InitModule();
+			if (null == this.targetPartModules) this.InitModule();
 
 			this.IsInitNeeded = true;
 			this.IsRestoreNeeded = true;
@@ -97,7 +97,7 @@ namespace TweakScaleCompanion.Visuals.Waterfall
 
 			// Needed because I can't intialize this on OnAwake as this module can be awaken before ModuleWaterfallFX,
 			// and OnRescale can be fired before OnLoad.
-			if (null == this.targetPartModule) this.InitModule();
+			if (null == this.targetPartModules) this.InitModule();
 
 			this.IsRestoreNeeded = true;
 		}
@@ -110,7 +110,7 @@ namespace TweakScaleCompanion.Visuals.Waterfall
 
 			// Needed because I can't intialize this on OnAwake as this module can be awaken before ModuleWaterfallFX,
 			// and OnRescale can be fired before OnLoad.
-			if (null == this.targetPartModule)
+			if (null == this.targetPartModules)
 			{
 				this.InitModule();
 				this.IsInitNeeded = true;
@@ -136,14 +136,12 @@ namespace TweakScaleCompanion.Visuals.Waterfall
 			{
 				this.InitInternalData();
 				this.IsInitNeeded = false;
-				Log.dbg("OnInitNeeded");
 			}
 
 			if (this.IsRestoreNeeded)
 			{
 				this.UpdateTarget(this.tweakscale.ScalingFactor);
 				this.IsRestoreNeeded = false;
-				Log.dbg("OnRestoreNeeded");
 			}
 		}
 
@@ -153,9 +151,7 @@ namespace TweakScaleCompanion.Visuals.Waterfall
 			Log.dbg("OnDestroy {0}:{1:X}", this.name, this.part.GetInstanceID());
 
 			// The object can be destroyed before the full initialization cycle while KSP is booting, so we need to check first.
-			if (null == this.targetPartModule) return;
-
-			this.DeInitUiControl();
+			if (null == this.targetPartModules) return;
 		}
 
 		#endregion
@@ -165,9 +161,9 @@ namespace TweakScaleCompanion.Visuals.Waterfall
 
 		void IRescalable.OnRescale(ScalingFactor factor)
 		{
-			Log.dbg("OnRescale {0}:{1:X} to {2}", this.name, this.part.GetInstanceID(), factor.ToString());
+			Log.dbg("OnRescale {0}:{1:X} to {2}", this.name, this.part.GetInstanceID(), factor.absolute.linear);
 
-			this.UpdateTarget(factor);
+			this.IsRestoreNeeded = true;
 		}
 
 		#endregion
@@ -175,12 +171,11 @@ namespace TweakScaleCompanion.Visuals.Waterfall
 		private void InitModule()
 		{
 			this.tweakscale = this.part.Modules.GetModule<TweakScale.TweakScale>();
-			this.targetPartModule = this.part.Modules.GetModule<ModuleWaterfallFX>();
-			if (null == this.targetPartModule || !this.targetPartModule.enabled)
-			{
-				this.enabled = false;
-				return;
-			}
+			this.targetPartModules = this.part.Modules.GetModules<ModuleWaterfallFX>().ToArray();
+			this.enabled = false;
+			foreach (ModuleWaterfallFX m in this.targetPartModules)
+				this.enabled |= m.enabled;
+			if (!this.enabled) return;
 		}
 
 		private void InitInternalData()
@@ -188,18 +183,15 @@ namespace TweakScaleCompanion.Visuals.Waterfall
 			Log.dbg("InitInternalData {0}:{1:X}", this.name, this.part.GetInstanceID());
 
 			this.originalFx.Clear();
-			foreach (global::Waterfall.WaterfallEffect fx in this.targetPartModule.FX)
-				this.originalFx.Add(new Data(fx));
-		}
-
-		private void DeInitUiControl()
-		{
+			foreach(ModuleWaterfallFX m in this.targetPartModules)
+				foreach (global::Waterfall.WaterfallEffect fx in m.FX)
+					this.originalFx.Add(new Data(fx, this));
 		}
 
 		private void UpdateTarget(ScalingFactor factor)
 		{
-			Log.dbg("this.targetPartModule {0}:{1:X}", this.name, this.part.GetInstanceID());
-			if (null == this.targetPartModule) return;
+			Log.dbg("UpdateTarget {0}:{1:X} by {2}", this.name, this.part.GetInstanceID(), factor.absolute.linear);
+			if (null == this.targetPartModules) return;
 
 			foreach (Data data in this.originalFx)
 				this.scale(data, factor);
@@ -207,10 +199,10 @@ namespace TweakScaleCompanion.Visuals.Waterfall
 
 		private void scale(Data data, ScalingFactor factor)
 		{
-			data.fx.ApplyTemplateOffsets(data.position * factor.absolute.linear, data.fx.TemplateRotationOffset, data.meshScale * factor.absolute.linear);
+			data.fx.ApplyTemplateOffsets(data.position, data.fx.TemplateRotationOffset, data.meshScale * factor.absolute.linear);
 		}
 
-		private static KSPe.Util.Log.Logger Log = KSPe.Util.Log.Logger.CreateForType<TweakScalerModuleWaterfallFX>("TweakScaleCompanion_Visuals", "TweakScalerModuleWaterfallFX");
+		private static KSPe.Util.Log.Logger Log = KSPe.Util.Log.Logger.CreateForType<TweakScalerModuleWaterfallFX>("TweakScaleCompanion_Visuals", "TweakScalerWaterfallFX");
 
 		static TweakScalerModuleWaterfallFX()
 		{
