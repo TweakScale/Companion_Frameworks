@@ -1,4 +1,4 @@
-source ../CONFIG.inc
+source ../../CONFIG.inc
 
 PACKAGE=TweakScaleCompanion.Visuals
 TARGETDIR="TweakScaleCompanion/Visuals"
