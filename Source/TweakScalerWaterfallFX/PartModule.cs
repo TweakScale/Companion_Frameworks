@@ -82,10 +82,6 @@ namespace TweakScaleCompanion.Visuals.Waterfall
 			Log.dbg("OnStart {0}:{1:X} {2}", this.name, this.part.GetInstanceID(), state);
 			base.OnStart(state);
 
-			// Needed because I can't intialize this on OnAwake as this module can be awaken before ModuleWaterfallFX or TweakScale,
-			// and OnRescale can be fired before OnLoad.
-			if (null == this.targetPartModules) this.InitModule();
-
 			this.IsInitNeeded = true;
 			this.IsRestoreNeeded = true;
 		}
@@ -134,6 +130,13 @@ namespace TweakScaleCompanion.Visuals.Waterfall
 		{
 			if (this.IsInitNeeded)
 			{
+				// Needed because I can't intialize this on OnAwake as this module can be awaken before ModuleWaterfallFX or TweakScale,
+				// and OnRescale can be fired before OnLoad.
+				// Note: On KSP 1.12, the this.part.Modules are not completely filed as OnStart is called, so now we need
+				// to do it here.
+				// See https://forum.kerbalspaceprogram.com/index.php?/topic/192216-tweakscale-companion-program-2021-0201/&do=findComment&comment=3995406
+				if (null == this.targetPartModules) this.InitModule();
+
 				this.InitInternalData();
 				this.IsInitNeeded = false;
 			}
@@ -175,7 +178,6 @@ namespace TweakScaleCompanion.Visuals.Waterfall
 			this.enabled = false;
 			foreach (ModuleWaterfallFX m in this.targetPartModules)
 				this.enabled |= m.enabled;
-			if (!this.enabled) return;
 		}
 
 		private void InitInternalData()
