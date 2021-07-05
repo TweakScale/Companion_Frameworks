@@ -21,3 +21,4 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyVersion(TweakScaleCompanion.Visuals.Version.Number)]
 [assembly: AssemblyFileVersion(TweakScaleCompanion.Visuals.Version.Number)]
 [assembly: KSPAssembly("TweakScaleCompanion_Visuals", TweakScaleCompanion.Visuals.Version.major, TweakScaleCompanion.Visuals.Version.minor)]
+[assembly: KSPAssemblyDependency("KSPe.Light.TweakScale", 2, 1)]

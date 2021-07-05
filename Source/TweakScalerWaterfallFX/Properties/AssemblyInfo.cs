@@ -21,3 +21,8 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyVersion(TweakScaleCompanion.Visuals.Version.Number)]
 [assembly: AssemblyFileVersion(TweakScaleCompanion.Visuals.Version.Number)]
 [assembly: KSPAssembly("TweakScalerModuleWaterfallFX", TweakScaleCompanion.Visuals.Version.major, TweakScaleCompanion.Visuals.Version.minor)]
+[assembly: KSPAssemblyDependency("KSPe.Light.TweakScale", 2, 1)]
+[assembly: KSPAssemblyDependency("Scale", 2, 4)]
+[assembly: KSPAssemblyDependency("Scale_Redist", 1, 0)]
+[assembly: KSPAssemblyDependency("TweakScaleCompanion_Visuals", TweakScaleCompanion.Visuals.Version.major, TweakScaleCompanion.Visuals.Version.minor)]
+[assembly: KSPAssemblyDependency("Waterfall", 0, 0)]
