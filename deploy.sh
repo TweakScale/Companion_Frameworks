@@ -65,6 +65,9 @@ cp LICENSE* "./GameData/$TARGETDIR"
 cp NOTICE "./GameData/$TARGETDIR"
 deploy_md README.md
 
+TARGETBINDIR="${TARGETDIR}" deploy_bin TweakScaleCompanion_Visuals
+TARGETBINDIR="${TARGETDIR}/Waterfall" deploy_bin TweakScalerWaterfallFX
+
 #for dll in xxxx ; do
 #    deploy_dev $dll
 #    deploy_bin $dll
