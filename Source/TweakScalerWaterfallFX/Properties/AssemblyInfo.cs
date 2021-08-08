@@ -23,6 +23,6 @@ using System.Runtime.CompilerServices;
 [assembly: KSPAssembly("TweakScalerModuleWaterfallFX", TweakScaleCompanion.Visuals.Version.major, TweakScaleCompanion.Visuals.Version.minor)]
 [assembly: KSPAssemblyDependency("KSPe.Light.TweakScale", 2, 1)]
 [assembly: KSPAssemblyDependency("Scale", 2, 4)]
-[assembly: KSPAssemblyDependency("Scale_Redist", 1, 0)]
+//[assembly: KSPAssemblyDependency("Scale_Redist", 1, 0)] // KSP 1.12.2 screwed up the Dependenct check!!!
 [assembly: KSPAssemblyDependency("TweakScaleCompanion_Visuals", TweakScaleCompanion.Visuals.Version.major, TweakScaleCompanion.Visuals.Version.minor)]
 [assembly: KSPAssemblyDependency("Waterfall", 0, 0)]
