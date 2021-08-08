@@ -57,6 +57,8 @@ deploy_gamedata() {
 }
 VERSIONFILE=$PACKAGE.version
 
+echo Deploying to ${KSP_DEV}
+
 check
 cp $VERSIONFILE "./GameData/$TARGETDIR"
 cp CHANGE_LOG.md "./GameData/$TARGETDIR"
@@ -72,3 +74,5 @@ TARGETBINDIR="${TARGETDIR}/Waterfall" deploy_bin TweakScalerWaterfallFX
 #    deploy_dev $dll
 #    deploy_bin $dll
 #done
+
+echo Done!
