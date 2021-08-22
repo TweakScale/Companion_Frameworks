@@ -28,4 +28,18 @@ Global
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9D8379CD-29F4-4D25-A81F-4190265AD2B1}
 	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		Policies = $0
+		$0.TextStylePolicy = $1
+		$1.inheritsSet = null
+		$1.scope = text/x-csharp
+		$0.CSharpFormattingPolicy = $2
+		$2.SpaceAfterColonInBaseTypeDeclaration = False
+		$2.SpaceAfterSemicolonsInForStatement = False
+		$2.SpaceBeforeColonInBaseTypeDeclaration = False
+		$2.scope = text/x-csharp
+		$0.TextStylePolicy = $3
+		$3.FileWidth = 132
+		$3.scope = text/plain
+	EndGlobalSection
 EndGlobal
