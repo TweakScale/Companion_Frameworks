@@ -73,13 +73,13 @@ namespace TweakScaleCompanion.Visuals.Waterfall
 
 		public override void OnAwake()
 		{
-			Log.dbg("OnAwake {0}:{1:X}", this.name, this.part.GetInstanceID());
+			Log.dbg("OnAwake {0}", this.InstanceID);
 			base.OnAwake();
 		}
 
 		public override void OnStart(StartState state)
 		{
-			Log.dbg("OnStart {0}:{1:X} {2}", this.name, this.part.GetInstanceID(), state);
+			Log.dbg("OnStart {0} {1}", this.name, this.InstanceID, state);
 			base.OnStart(state);
 
 			this.IsInitNeeded = true;
@@ -88,7 +88,7 @@ namespace TweakScaleCompanion.Visuals.Waterfall
 
 		public override void OnCopy(PartModule fromModule)
 		{
-			Log.dbg("OnCopy {0}:{1:X} from {2:X}", this.name, this.part.GetInstanceID(), fromModule.part.GetInstanceID());
+			Log.dbg("OnCopy {0} from {1:X}", this.InstanceID, fromModule.part.GetInstanceID());
 			base.OnCopy(fromModule);
 
 			// Needed because I can't intialize this on OnAwake as this module can be awaken before ModuleWaterfallFX,
@@ -100,7 +100,7 @@ namespace TweakScaleCompanion.Visuals.Waterfall
 
 		public override void OnLoad(ConfigNode node)
 		{
-			Log.dbg("OnLoad {0}:{1:X} {2}", this.name, this.part.GetInstanceID(), null == node ? "prefab" : node.name);
+			Log.dbg("OnLoad {0} {1}", this.InstanceID, null == node ? "prefab" : node.name);
 			base.OnLoad(node);
 			if (null == node) return;   // Load from Prefab - not interesting.
 
@@ -116,7 +116,7 @@ namespace TweakScaleCompanion.Visuals.Waterfall
 
 		public override void OnSave(ConfigNode node)
 		{
-			Log.dbg("OnSave {0}:{1:X} {2}", this.name, this.part.GetInstanceID(), null != node);
+			Log.dbg("OnSave {0} {1}", this.InstanceID, null != node);
 			base.OnSave(node);
 		}
 
@@ -151,7 +151,7 @@ namespace TweakScaleCompanion.Visuals.Waterfall
 		[UsedImplicitly]
 		private void OnDestroy()
 		{
-			Log.dbg("OnDestroy {0}:{1:X}", this.name, this.part.GetInstanceID());
+			Log.dbg("OnDestroy {0}", this.InstanceID);
 
 			// The object can be destroyed before the full initialization cycle while KSP is booting, so we need to check first.
 			if (null == this.targetPartModules) return;
@@ -164,7 +164,7 @@ namespace TweakScaleCompanion.Visuals.Waterfall
 
 		void IRescalable.OnRescale(ScalingFactor factor)
 		{
-			Log.dbg("OnRescale {0}:{1:X} to {2}", this.name, this.part.GetInstanceID(), factor.absolute.linear);
+			Log.dbg("OnRescale {0} to {1}", this.name, this.InstanceID, factor.absolute.linear);
 
 			this.IsRestoreNeeded = true;
 		}
@@ -187,7 +187,7 @@ namespace TweakScaleCompanion.Visuals.Waterfall
 
 		private void InitInternalData()
 		{
-			Log.dbg("InitInternalData {0}:{1:X}", this.name, this.part.GetInstanceID());
+			Log.dbg("InitInternalData {0}", this.InstanceID);
 
 			this.originalFx.Clear();
 			foreach(ModuleWaterfallFX m in this.targetPartModules)
@@ -197,7 +197,7 @@ namespace TweakScaleCompanion.Visuals.Waterfall
 
 		private void UpdateTarget(ScalingFactor factor)
 		{
-			Log.dbg("UpdateTarget {0}:{1:X} by {2}", this.name, this.part.GetInstanceID(), factor.absolute.linear);
+			Log.dbg("UpdateTarget {0} by {1}", this.InstanceID, factor.absolute.linear);
 			if (null == this.targetPartModules) return;
 
 			foreach (Data data in this.originalFx)
@@ -221,6 +221,7 @@ namespace TweakScaleCompanion.Visuals.Waterfall
 #endif
 				;
 		}
+		private string InstanceID => string.Format("{0}:{1:X}", this.name, (null == this.part ? 0 : this.part.GetInstanceID()));
 	}
 
 	public class Scaler : TweakScale.IRescalable<TweakScalerWaterfallFX>
