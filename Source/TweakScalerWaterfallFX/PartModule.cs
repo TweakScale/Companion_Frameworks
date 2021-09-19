@@ -174,7 +174,12 @@ namespace TweakScaleCompanion.Visuals.Waterfall
 		private void InitModule()
 		{
 			this.tweakscale = this.part.Modules.GetModule<TweakScale.TweakScale>();
-			this.targetPartModules = this.part.Modules.GetModules<ModuleWaterfallFX>().ToArray();
+			if (null == this.tweakscale) return;
+
+			List<ModuleWaterfallFX> l = this.part.Modules.GetModules<ModuleWaterfallFX>();
+			if (null == l) return;
+			this.targetPartModules = l.ToArray();
+
 			this.enabled = false;
 			foreach (ModuleWaterfallFX m in this.targetPartModules)
 				this.enabled |= m.enabled;
