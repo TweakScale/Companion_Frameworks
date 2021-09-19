@@ -93,9 +93,10 @@ namespace TweakScaleCompanion.Visuals.Waterfall
 
 			// Needed because I can't intialize this on OnAwake as this module can be awaken before ModuleWaterfallFX,
 			// and OnRescale can be fired before OnLoad.
-			if (null == this.targetPartModules) this.InitModule();
+			if (null == this.targetPartModules) this.IsInitNeeded = true;
 
 			this.IsRestoreNeeded = true;
+			this.enabled = true; // To allow the "FSM" on Update to run!
 		}
 
 		public override void OnLoad(ConfigNode node)
@@ -108,7 +109,6 @@ namespace TweakScaleCompanion.Visuals.Waterfall
 			// and OnRescale can be fired before OnLoad.
 			if (null == this.targetPartModules)
 			{
-				this.InitModule();
 				this.IsInitNeeded = true;
 			}
 			this.IsRestoreNeeded = true;
@@ -135,10 +135,9 @@ namespace TweakScaleCompanion.Visuals.Waterfall
 				// Note: On KSP 1.12, the this.part.Modules are not completely filed as OnStart is called, so now we need
 				// to do it here.
 				// See https://forum.kerbalspaceprogram.com/index.php?/topic/192216-tweakscale-companion-program-2021-0201/&do=findComment&comment=3995406
-				if (null == this.targetPartModules) this.InitModule();
-
-				this.InitInternalData();
-				this.IsInitNeeded = false;
+				if (this.IsInitNeeded = this.InitModule())
+					if (HighLogic.LoadedSceneIsFlight) // For some reason I could not understand, I can't initialise Waterfall from the Editor.
+						this.InitInternalData();
 			}
 
 			if (this.IsRestoreNeeded)
@@ -171,18 +170,19 @@ namespace TweakScaleCompanion.Visuals.Waterfall
 
 		#endregion
 
-		private void InitModule()
+		private bool InitModule()
 		{
 			this.tweakscale = this.part.Modules.GetModule<TweakScale.TweakScale>();
-			if (null == this.tweakscale) return;
+			if (null == this.tweakscale) return false;
 
 			List<ModuleWaterfallFX> l = this.part.Modules.GetModules<ModuleWaterfallFX>();
-			if (null == l) return;
+			if (null == l) return false;
 			this.targetPartModules = l.ToArray();
 
 			this.enabled = false;
 			foreach (ModuleWaterfallFX m in this.targetPartModules)
 				this.enabled |= m.enabled;
+			return true;
 		}
 
 		private void InitInternalData()
