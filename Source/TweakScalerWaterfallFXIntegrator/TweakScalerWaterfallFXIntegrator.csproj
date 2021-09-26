@@ -69,6 +69,10 @@
       <Project>{AB40E88E-D360-4EC4-8676-8A0B7225FD02}</Project>
       <Name>TweakScalerWaterfallFX</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TweakScaleCompanion_Frameworks\TweakScaleCompanion_Frameworks.csproj">
+      <Project>{4A788998-5329-475F-BE34-1521F5DF78EB}</Project>
+      <Name>TweakScaleCompanion_Frameworks</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
