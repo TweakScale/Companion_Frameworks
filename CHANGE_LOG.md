@@ -1,5 +1,9 @@
 # TweakScale Companion :: Frameworks :: Change Log
 
+* 2021-0926: 0.2.0.0 **Beta** (LisiasT) for KSP >= 1.8
+	+ Refactoring:
+		- Using recent KSPe.Light.TweakScale features to allow selective loading of DLLs bound to 3rd-parties, allowing the Companion to be used on installments where these dependencies are not preset.
+		- A lot of flexibility on deployment are available now.  
 * 2021-0919: 0.1.0.2 **Beta** (LisiasT) for KSP >= 1.8
 	+ A less than ideal initialisation routine were fixed.
 	+ Closes Issues:
