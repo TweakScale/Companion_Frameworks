@@ -10,6 +10,9 @@ clean() {
 	fi
 }
 
+echo "Not available."
+exit 1
+
 pwd=$(pwd)
 FILE=${pwd}/Archive/$PACKAGE-$VERSION${PROJECT_STATE}-CurseForge.zip
 echo $FILE
