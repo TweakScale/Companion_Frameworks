@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TweakScaleCompanion_Visuals
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TweakScalerWaterfallFX", "Source\TweakScalerWaterfallFX\TweakScalerWaterfallFX.csproj", "{AB40E88E-D360-4EC4-8676-8A0B7225FD02}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TweakScalerWaterfallFXIntegrator", "Source\TweakScalerWaterfallFXIntegrator\TweakScalerWaterfallFXIntegrator.csproj", "{34D80B61-6B7C-4CC0-AF9E-0BFC452026BF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{AB40E88E-D360-4EC4-8676-8A0B7225FD02}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB40E88E-D360-4EC4-8676-8A0B7225FD02}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB40E88E-D360-4EC4-8676-8A0B7225FD02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34D80B61-6B7C-4CC0-AF9E-0BFC452026BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34D80B61-6B7C-4CC0-AF9E-0BFC452026BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34D80B61-6B7C-4CC0-AF9E-0BFC452026BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34D80B61-6B7C-4CC0-AF9E-0BFC452026BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

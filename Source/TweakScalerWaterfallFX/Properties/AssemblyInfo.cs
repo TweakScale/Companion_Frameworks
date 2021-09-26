@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 // Change them to the values specific to your project.
 
 [assembly: AssemblyTitle("TweakScalerModuleWaterfallFX")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Adds TweakScale support for WaterfallFX")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany(TweakScaleCompanion.Visuals.LegalMamboJambo.Company)]
 [assembly: AssemblyProduct(TweakScaleCompanion.Visuals.LegalMamboJambo.Product)]

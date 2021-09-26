@@ -20,30 +20,13 @@
 	along with TweakScaleCompanion_Visuals. If not, see <https://www.gnu.org/licenses/>.
 
 */
-using System;
-using System.Collections.Generic;
-using TweakScale;
-using TweakScale.Annotations;
-using UnityEngine;
-using ModuleWaterfallFX = global::Waterfall.ModuleWaterfallFX;
+
+using TweakScaleCompanion.Visuals.Waterfall.Integrator;
 
 namespace TweakScaleCompanion.Visuals.Waterfall
 {
-	public class TweakScalerWaterfallFX : PartModule, IRescalable
+	public class TweakScalerWaterfallFX : PartModule, Integrator.Listener
 	{
-		private class Data
-		{
-			public readonly global::Waterfall.WaterfallEffect fx;
-			public readonly Vector3 meshScale;
-			public readonly Vector3 position;
-
-			public Data(global::Waterfall.WaterfallEffect fx, TweakScalerWaterfallFX myself)
-			{
-				this.fx = fx;
-				this.meshScale = fx.TemplateScaleOffset;
-				this.position = fx.TemplatePositionOffset;
-			}
-		}
 
 		#region KSP UI
 
@@ -62,10 +45,7 @@ namespace TweakScaleCompanion.Visuals.Waterfall
 
 		#endregion
 
-		private TweakScale.TweakScale tweakscale;
-		private ModuleWaterfallFX[] targetPartModules;
-		private readonly List<Data> originalFx = new List<Data>();
-
+		private Integrator.Notifier notifier = null;
 		private bool IsRestoreNeeded = false;
 		private bool IsInitNeeded = true;
 
@@ -93,7 +73,7 @@ namespace TweakScaleCompanion.Visuals.Waterfall
 
 			// Needed because I can't intialize this on OnAwake as this module can be awaken before ModuleWaterfallFX,
 			// and OnRescale can be fired before OnLoad.
-			if (null == this.targetPartModules) this.IsInitNeeded = true;
+			if (null == this.notifier) this.IsInitNeeded = true;
 
 			this.IsRestoreNeeded = true;
 			this.enabled = true; // To allow the "FSM" on Update to run!
@@ -107,10 +87,8 @@ namespace TweakScaleCompanion.Visuals.Waterfall
 
 			// Needed because I can't intialize this on OnAwake as this module can be awaken before ModuleWaterfallFX,
 			// and OnRescale can be fired before OnLoad.
-			if (null == this.targetPartModules)
-			{
+			if (null == this.notifier)
 				this.IsInitNeeded = true;
-			}
 			this.IsRestoreNeeded = true;
 		}
 
@@ -124,8 +102,7 @@ namespace TweakScaleCompanion.Visuals.Waterfall
 
 
 		#region Unity Life Cycle
-		 
-		[UsedImplicitly]
+
 		private void Update()
 		{
 			if (this.IsInitNeeded)
@@ -137,105 +114,55 @@ namespace TweakScaleCompanion.Visuals.Waterfall
 				// See https://forum.kerbalspaceprogram.com/index.php?/topic/192216-tweakscale-companion-program-2021-0201/&do=findComment&comment=3995406
 				if (this.IsInitNeeded = this.InitModule())
 					if (HighLogic.LoadedSceneIsFlight) // For some reason I could not understand, I can't initialise Waterfall from the Editor.
-						this.InitInternalData();
+						this.notifier.Init();
 			}
 
 			if (this.IsRestoreNeeded)
 			{
-				this.UpdateTarget(this.tweakscale.ScalingFactor);
+				this.notifier.Update();
 				this.IsRestoreNeeded = false;
 			}
 		}
 
-		[UsedImplicitly]
 		private void OnDestroy()
 		{
 			Log.dbg("OnDestroy {0}", this.InstanceID);
 
 			// The object can be destroyed before the full initialization cycle while KSP is booting, so we need to check first.
-			if (null == this.targetPartModules) return;
+			if (null == this.notifier) return;
 		}
 
 		#endregion
 
-
-		#region Part Events Handlers
-
-		void IRescalable.OnRescale(ScalingFactor factor)
+		void Integrator.Listener.NotifyRestoreNeeded()
 		{
-			Log.dbg("OnRescale {0} to {1}", this.name, this.InstanceID, factor.absolute.linear);
-
 			this.IsRestoreNeeded = true;
 		}
 
-		#endregion
+		string Listener.GetName()
+		{
+			return this.name;
+		}
 
 		private bool InitModule()
 		{
-			this.tweakscale = this.part.Modules.GetModule<TweakScale.TweakScale>();
-			if (null == this.tweakscale) return false;
-
-			List<ModuleWaterfallFX> l = this.part.Modules.GetModules<ModuleWaterfallFX>();
-			if (null == l) return false;
-			this.targetPartModules = l.ToArray();
-
-			this.enabled = false;
-			foreach (ModuleWaterfallFX m in this.targetPartModules)
-				this.enabled |= m.enabled;
+			try
+			{
+				System.Type type = KSPe.Util.SystemTools.TypeFinder.FindByInterfaceName("TweakScaleCompanion.Visuals.Waterfall.Integrator.Notifier");
+				System.Reflection.ConstructorInfo ctor = type.GetConstructor(new[] { typeof(Part), typeof(Listener) });
+				this.notifier = (Notifier) ctor.Invoke(new object[] { this.part, (Listener)this });
+			}
+			catch (System.NullReferenceException e)
+			{
+				Log.error(this, e);
+				return false;
+			}
+			this.enabled = this.notifier.IsEnabled();
 			return true;
 		}
 
-		private void InitInternalData()
-		{
-			Log.dbg("InitInternalData {0}", this.InstanceID);
-
-			this.originalFx.Clear();
-			foreach(ModuleWaterfallFX m in this.targetPartModules)
-				foreach (global::Waterfall.WaterfallEffect fx in m.FX)
-					this.originalFx.Add(new Data(fx, this));
-		}
-
-		private void UpdateTarget(ScalingFactor factor)
-		{
-			Log.dbg("UpdateTarget {0} by {1}", this.InstanceID, factor.absolute.linear);
-			if (null == this.targetPartModules) return;
-
-			foreach (Data data in this.originalFx)
-				this.scale(data, factor);
-		}
-
-		private void scale(Data data, ScalingFactor factor)
-		{
-			data.fx.ApplyTemplateOffsets(data.position, data.fx.TemplateRotationOffset, data.meshScale * factor.absolute.linear);
-		}
-
-		private static KSPe.Util.Log.Logger Log = KSPe.Util.Log.Logger.CreateForType<TweakScalerWaterfallFX>("TweakScaleCompanion_Visuals", "TweakScalerWaterfallFX");
-
-		static TweakScalerWaterfallFX()
-		{
-			Log.level =
-#if DEBUG
-				KSPe.Util.Log.Level.TRACE
-#else
-				KSPe.Util.Log.Level.INFO
-#endif
-				;
-		}
+		private static KSPe.Util.Log.Logger Log = KSPe.Util.Log.Logger.CreateForType<TweakScalerWaterfallFX>("TweakScaleCompanion.Visuals", "TweakScalerWaterfallFX");
 		private string InstanceID => string.Format("{0}:{1:X}", this.name, (null == this.part ? 0 : this.part.GetInstanceID()));
 	}
 
-	public class Scaler : TweakScale.IRescalable<TweakScalerWaterfallFX>
-	{
-		private readonly TweakScale.IRescalable pm;
-
-		public Scaler(TweakScalerWaterfallFX pm)
-		{
-			this.pm = pm;
-		}
-
-		public void OnRescale(ScalingFactor factor)
-		{
-			this.pm.OnRescale(factor);
-		}
-	}
 }

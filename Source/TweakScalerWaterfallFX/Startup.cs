@@ -23,39 +23,16 @@
 using System;
 using UnityEngine;
 
-namespace TweakScaleCompanion.Visuals
+namespace TweakScaleCompanion.Visuals.Waterfall
 {
 	[KSPAddon(KSPAddon.Startup.Instantly, true)]
 	internal class Startup : MonoBehaviour
 	{
-		private void Start()
+		private void Awake()
 		{
-			Log.force("Version {0}", Version.Text);
-
-			try
-			{
-				KSPe.Util.Installation.Check<Startup>("TweakScaleCompanion_Visuals", "TweakScaleCompanion/Visuals", null);
-			}
-			catch (KSPe.Util.InstallmentException e)
-			{
-				Log.error(e.ToShortMessage());
-				KSPe.Common.Dialogs.ShowStopperAlertBox.Show(e);
-			}
-
-			this.checkDependencies();
-		}
-
-		private void checkDependencies()
-		{
-			// Linq is giving me "Exception System.InvalidOperationException: Operation is not valid due to the current state of the object".
-			// So I got rid of that crap.
-			foreach (AssemblyLoader.LoadedAssembly assembly in AssemblyLoader.loadedAssemblies) if ("Scale" == assembly.assembly.GetName().Name)
-			{
-				Log.detail("Found {0}", assembly.assembly.FullName);
-				if (assembly.assembly.GetName().Version.CompareTo(new System.Version(2, 4, 5)) >= 0) return;
-				break;
-			}
-			GUI.UnmetRequirementsShowStopperAlertBox.Show("TweakScale v2.4.5 or superior");
+			if (KSPe.Util.SystemTools.TypeFinder.ExistsByQualifiedName("Waterfall.Waterfall"))
+				using(KSPe.Util.SystemTools.Assembly.Loader a = new KSPe.Util.SystemTools.Assembly.Loader(typeof(Startup).Namespace.Replace(".",KSPe.IO.Path.DirectorySeparatorStr)))
+					a.LoadAndStartup("TweakScalerWaterfallFXIntegrator");
 		}
 	}
 }

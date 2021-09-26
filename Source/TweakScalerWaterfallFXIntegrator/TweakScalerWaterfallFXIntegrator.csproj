@@ -3,12 +3,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AB40E88E-D360-4EC4-8676-8A0B7225FD02}</ProjectGuid>
+    <ProjectGuid>{34D80B61-6B7C-4CC0-AF9E-0BFC452026BF}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>TweakScalerWaterfallFX</RootNamespace>
-    <AssemblyName>TweakScalerWaterfallFX</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <BaseIntermediateOutputPath>..\..\obj\$(AssemblyName)</BaseIntermediateOutputPath>
+    <RootNamespace>TweakScalerWaterfallFXIntegrator</RootNamespace>
+    <AssemblyName>TweakScalerWaterfallFXIntegrator</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <BaseIntermediateOutputPath>..\..\obj\(AssemblyName)</BaseIntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -19,7 +19,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
-    <BaseIntermediateOutputPath>..\..\obj\$(AssemblyName)</BaseIntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>true</Optimize>
@@ -30,38 +29,45 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\..\..\..\..\..\LIB\managed\1.4.0\Assembly-CSharp.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="KSPe.Light.TweakScale">
       <HintPath>..\..\..\..\..\..\..\LIB\plugins\KSPe.Light.TweakScale.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="UnityEngine.TextRenderingModule">
-      <HintPath>..\..\..\..\..\..\..\LIB\managed\1.8.0\UnityEngine.TextRenderingModule.dll</HintPath>
+    <Reference Include="Scale">
+      <HintPath>..\..\..\..\..\..\..\LIB\plugins\Scale.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="UnityEngine.Core&#xA;    Module">
-      <HintPath>..\..\..\..\..\..\..\LIB\managed\1.8.0\UnityEngine.CoreModule.dll</HintPath>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\..\..\..\..\..\LIB\managed\1.8.0\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine">
       <HintPath>..\..\..\..\..\..\..\LIB\managed\1.8.0\UnityEngine.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\..\..\..\..\..\LIB\managed\1.8.0\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Scale_Redist">
+      <HintPath>..\..\..\..\..\..\..\LIB\plugins\Scale_Redist.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Waterfall">
+      <HintPath>..\..\..\..\..\..\..\LIB\plugins\Waterfall.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PartModule.cs" />
-    <Compile Include="Integration.cs" />
-    <Compile Include="Startup.cs" />
+    <Compile Include="Scaler.cs" />
+    <Compile Include="Data.cs" />
+    <Compile Include="Integrator.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TweakScaleCompanion_Visuals\TweakScaleCompanion_Visuals.csproj">
-      <Project>{4A788998-5329-475F-BE34-1521F5DF78EB}</Project>
-      <Name>TweakScaleCompanion_Visuals</Name>
-      <Private>False</Private>
+    <ProjectReference Include="..\TweakScalerWaterfallFX\TweakScalerWaterfallFX.csproj">
+      <Project>{AB40E88E-D360-4EC4-8676-8A0B7225FD02}</Project>
+      <Name>TweakScalerWaterfallFX</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
