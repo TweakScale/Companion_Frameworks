@@ -7,10 +7,10 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyTitle("TweakScalerWaterfallFXIntegrator")]
 [assembly: AssemblyDescription("Integrates the TweakScaler to the Target Module")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany(TweakScaleCompanion.Visuals.LegalMamboJambo.Company)]
-[assembly: AssemblyProduct(TweakScaleCompanion.Visuals.LegalMamboJambo.Product)]
-[assembly: AssemblyCopyright(TweakScaleCompanion.Visuals.LegalMamboJambo.Copyight)]
-[assembly: AssemblyTrademark(TweakScaleCompanion.Visuals.LegalMamboJambo.Trademark)]
+[assembly: AssemblyCompany(TweakScaleCompanion.Frameworks.LegalMamboJambo.Company)]
+[assembly: AssemblyProduct(TweakScaleCompanion.Frameworks.LegalMamboJambo.Product)]
+[assembly: AssemblyCopyright(TweakScaleCompanion.Frameworks.LegalMamboJambo.Copyright)]
+[assembly: AssemblyTrademark(TweakScaleCompanion.Frameworks.LegalMamboJambo.Trademark)]
 [assembly: AssemblyCulture("")]
 
 // The assembly version has the format "{Major}.{Minor}.{Build}.{Revision}".
@@ -19,11 +19,11 @@ using System.Runtime.CompilerServices;
 
 //[assembly: AssemblyVersion("1.0.*")]
 
-[assembly: AssemblyVersion(TweakScaleCompanion.Visuals.Version.Number)]
-[assembly: AssemblyFileVersion(TweakScaleCompanion.Visuals.Version.Number)]
-[assembly: KSPAssembly("TweakScalerWaterfallFXIntegrator", TweakScaleCompanion.Visuals.Version.major, TweakScaleCompanion.Visuals.Version.minor)]
-[assembly: KSPAssemblyDependency("TweakScaleCompanion_Visuals", TweakScaleCompanion.Visuals.Version.major, TweakScaleCompanion.Visuals.Version.minor)]
-[assembly: KSPAssemblyDependency("TweakScalerModuleWaterfallFX", TweakScaleCompanion.Visuals.Version.major, TweakScaleCompanion.Visuals.Version.minor)]
+[assembly: AssemblyVersion(TweakScaleCompanion.Frameworks.Version.Number)]
+[assembly: AssemblyFileVersion(TweakScaleCompanion.Frameworks.Version.Number)]
+[assembly: KSPAssembly("TweakScalerWaterfallFXIntegrator", TweakScaleCompanion.Frameworks.Version.major, TweakScaleCompanion.Frameworks.Version.minor)]
+[assembly: KSPAssemblyDependency("TweakScaleCompanion_Visuals", TweakScaleCompanion.Frameworks.Version.major, TweakScaleCompanion.Frameworks.Version.minor)]
+[assembly: KSPAssemblyDependency("TweakScalerModuleWaterfallFX", TweakScaleCompanion.Frameworks.Version.major, TweakScaleCompanion.Frameworks.Version.minor)]
 [assembly: KSPAssemblyDependency("Waterfall", 0, 0)]
 [assembly: KSPAssemblyDependency("KSPe.Light.TweakScale", 2, 4)]
 [assembly: KSPAssemblyDependency("Scale", 2, 4)]

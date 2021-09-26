@@ -1,25 +1,25 @@
-# TweakScale Companion :: Visuals
+# TweakScale Companion :: Frameworks
 
-Adds (up to date) TweakScale /L patches for some Visual Enhancing Add'Ons.
+Adds (up to date) TweakScale /L patches for Add'Ons that adds features to KSP itself.
 
 ## In a Hurry
 
-* [Source](https://github.com/net-lisias-ksp/TweakScaleCompanion_Visuals)
-	+ [Issue Tracker](https://github.com/net-lisias-ksp/TweakScaleCompanion_Visuals/issues)
+* [Source](https://github.com/net-lisias-ksp/TweakScaleCompanion_Frameworks)
+	+ [Issue Tracker](https://github.com/net-lisias-ksp/TweakScaleCompanion_Frameworks/issues)
 * Documentation
 	+ [Forum](https://forum.kerbalspaceprogram.com/index.php?/topic/192216-tweakscale-companion-program/)
-	+ [Project's README](https://github.com/net-lisias-ksp/TweakScaleCompanion_Visuals/blob/master/README.md)
-	+ [Install Instructions](https://github.com/net-lisias-ksp/TweakScaleCompanion_Visuals/blob/master/INSTALL.md)
+	+ [Project's README](https://github.com/net-lisias-ksp/TweakScaleCompanion_Frameworks/blob/master/README.md)
+	+ [Install Instructions](https://github.com/net-lisias-ksp/TweakScaleCompanion_Frameworks/blob/master/INSTALL.md)
 	+ [Change Log](./CHANGE_LOG.md)
 * Official Distribution Sites:
-	+ [Source and Binaries](https://github.com/net-lisias-ksp/TweakScaleCompanion_OPT) on GitHub.
-	+ [Latest Release](https://github.com/net-lisias-ksp/TweakScaleCompanion_Visuals/releases)
-		- [Binaries](https://github.com/net-lisias-ksp/TweakScaleCompanion_Visuals/Archive)
+	+ [Source and Binaries](https://github.com/net-lisias-ksp/TweakScaleCompanion_Frameworks) on GitHub.
+	+ [Latest Release](https://github.com/net-lisias-ksp/TweakScaleCompanion_Frameworks/releases)
+		- [Binaries](https://github.com/net-lisias-ksp/TweakScaleCompanion_Frameworks/Archive)
 
 
 ## Description
 
-Adds (up to date) TweakScale /L patches for some Visual Enhancing Add'Ons that needs scaling with the parts.
+Adds (up to date) TweakScale /L patches for some KSP Enhancing Add'Ons that needs scaling with the parts.
 
 Currently supports:
 

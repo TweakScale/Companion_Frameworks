@@ -4,8 +4,8 @@ using System.Runtime.CompilerServices;
 // Information about this assembly is defined by the following attributes. 
 // Change them to the values specific to your project.
 
-[assembly: AssemblyTitle("TweakScalerModuleWaterfallFX")]
-[assembly: AssemblyDescription("Adds TweakScale support for WaterfallFX")]
+[assembly: AssemblyTitle("TweakScaleCompanion_Frameworks")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany(TweakScaleCompanion.Frameworks.LegalMamboJambo.Company)]
 [assembly: AssemblyProduct(TweakScaleCompanion.Frameworks.LegalMamboJambo.Product)]
@@ -20,9 +20,5 @@ using System.Runtime.CompilerServices;
 
 [assembly: AssemblyVersion(TweakScaleCompanion.Frameworks.Version.Number)]
 [assembly: AssemblyFileVersion(TweakScaleCompanion.Frameworks.Version.Number)]
-[assembly: KSPAssembly("TweakScalerModuleWaterfallFX", TweakScaleCompanion.Frameworks.Version.major, TweakScaleCompanion.Frameworks.Version.minor)]
-[assembly: KSPAssemblyDependency("KSPe.Light.TweakScale", 2, 1)]
-[assembly: KSPAssemblyDependency("Scale", 2, 4)]
-//[assembly: KSPAssemblyDependency("Scale_Redist", 1, 0)] // KSP 1.12.2 screwed up the Dependenct check!!!
-[assembly: KSPAssemblyDependency("TweakScaleCompanion_Frameworks", TweakScaleCompanion.Frameworks.Version.major, TweakScaleCompanion.Frameworks.Version.minor)]
-[assembly: KSPAssemblyDependency("Waterfall", 0, 0)]
+[assembly: KSPAssembly("TweakScaleCompanion_Frameworks", TweakScaleCompanion.Frameworks.Version.major, TweakScaleCompanion.Frameworks.Version.minor)]
+[assembly: KSPAssemblyDependency("KSPe.Light.TweakScale", 2, 4)]

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.808.4
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TweakScaleCompanion_Visuals", "Source\TweakScaleCompanion_Visuals\TweakScaleCompanion_Visuals.csproj", "{4A788998-5329-475F-BE34-1521F5DF78EB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TweakScaleCompanion_Frameworks", "Source\TweakScaleCompanion_Frameworks\TweakScaleCompanion_Frameworks.csproj", "{4A788998-5329-475F-BE34-1521F5DF78EB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TweakScalerWaterfallFX", "Source\TweakScalerWaterfallFX\TweakScalerWaterfallFX.csproj", "{AB40E88E-D360-4EC4-8676-8A0B7225FD02}"
 EndProject

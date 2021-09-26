@@ -8,7 +8,7 @@
     <RootNamespace>TweakScalerWaterfallFX</RootNamespace>
     <AssemblyName>TweakScalerWaterfallFX</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <BaseIntermediateOutputPath>..\..\obj\$(AssemblyName)</BaseIntermediateOutputPath>
+    <BaseIntermediateOutputPath>..\..\obj\TweakScalerWaterfallFX</BaseIntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -58,10 +58,9 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TweakScaleCompanion_Visuals\TweakScaleCompanion_Visuals.csproj">
+    <ProjectReference Include="..\TweakScaleCompanion_Frameworks\TweakScaleCompanion_Frameworks.csproj">
       <Project>{4A788998-5329-475F-BE34-1521F5DF78EB}</Project>
-      <Name>TweakScaleCompanion_Visuals</Name>
-      <Private>False</Private>
+      <Name>TweakScaleCompanion_Frameworks</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

@@ -1,29 +1,29 @@
 ﻿/*
-	This file is part of TweakScaleCompanion_EyeCandies
+	This file is part of TweakScaleCompanion_Frameworks
 	© 2021 LisiasT : http://lisias.net <support@lisias.net>
 
-	TweakScaleCompanion_EyeCandies is double licensed, as follows:
+	TweakScaleCompanion_Frameworks is double licensed, as follows:
 
 	* SKL 1.0 : https://ksp.lisias.net/SKL-1_0.txt
 	* GPL 2.0 : https://www.gnu.org/licenses/gpl-2.0.txt
 
 	And you are allowed to choose the License that better suit your needs.
 
-	TweakScaleCompanion_EyeCandies is distributed in the hope that it will be useful,
+	TweakScaleCompanion_Frameworks is distributed in the hope that it will be useful,
 	but WITHOUT ANY WARRANTY; without even the implied warranty of
 	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 	You should have received a copy of the SKL Standard License 1.0
-	along with TweakScaleCompanion_EyeCandies. If not, see <https://ksp.lisias.net/SKL-1_0.txt>.
+	along with TweakScaleCompanion_Frameworks. If not, see <https://ksp.lisias.net/SKL-1_0.txt>.
 
 	You should have received a copy of the GNU General Public License 2.0
-	along with TweakScaleCompanion_EyeCandies. If not, see <https://www.gnu.org/licenses/>.
+	along with TweakScaleCompanion_Frameworks. If not, see <https://www.gnu.org/licenses/>.
 
 */
 using System;
 using UnityEngine;
 
-namespace TweakScaleCompanion.Visuals
+namespace TweakScaleCompanion.Frameworks
 {
 	[KSPAddon(KSPAddon.Startup.Instantly, true)]
 	internal class Startup : MonoBehaviour
@@ -34,7 +34,7 @@ namespace TweakScaleCompanion.Visuals
 
 			try
 			{
-				KSPe.Util.Installation.Check<Startup>("TweakScaleCompanion_Visuals", "TweakScaleCompanion/Visuals", null);
+				KSPe.Util.Installation.Check<Startup>("TweakScaleCompanion_Frameworks", "TweakScaleCompanion/Frameworks", null);
 			}
 			catch (KSPe.Util.InstallmentException e)
 			{
@@ -52,10 +52,10 @@ namespace TweakScaleCompanion.Visuals
 			foreach (AssemblyLoader.LoadedAssembly assembly in AssemblyLoader.loadedAssemblies) if ("Scale" == assembly.assembly.GetName().Name)
 			{
 				Log.detail("Found {0}", assembly.assembly.FullName);
-				if (assembly.assembly.GetName().Version.CompareTo(new System.Version(2, 4, 5)) >= 0) return;
+				if (assembly.assembly.GetName().Version.CompareTo(new System.Version(2, 4, 6)) >= 0) return;
 				break;
 			}
-			GUI.UnmetRequirementsShowStopperAlertBox.Show("TweakScale v2.4.5 or superior");
+			GUI.UnmetRequirementsShowStopperAlertBox.Show("TweakScale v2.4.6 or superior");
 		}
 	}
 }

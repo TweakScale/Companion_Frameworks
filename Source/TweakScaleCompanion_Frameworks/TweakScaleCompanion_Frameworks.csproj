@@ -5,10 +5,10 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{4A788998-5329-475F-BE34-1521F5DF78EB}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>TweakScaleCompanion.Visuals</RootNamespace>
-    <AssemblyName>TweakScaleCompanion_Visuals</AssemblyName>
+    <RootNamespace>TweakScaleCompanion.Frameworks</RootNamespace>
+    <AssemblyName>TweakScaleCompanion_Frameworks</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <BaseIntermediateOutputPath>..\..\obj\$(AssemblyName)</BaseIntermediateOutputPath>
+    <BaseIntermediateOutputPath>..\..\obj\TweakScaleCompanion_Frameworks</BaseIntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

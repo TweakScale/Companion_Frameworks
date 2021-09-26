@@ -1,6 +1,6 @@
-# TweakScale Companion :: Visuals
+# TweakScale Companion :: Frameworks
 
-Adds (up to date) TweakScale /L patches for some Visual Enhancing Add'Ons.
+Adds (up to date) TweakScale /L patches for some KSP Enhancing Add'Ons.
 
 
 ## Installation Instructions
@@ -8,9 +8,10 @@ Adds (up to date) TweakScale /L patches for some Visual Enhancing Add'Ons.
 To install, place the GameData folder inside your Kerbal Space Program folder:
 
 * **REMOVE ANY OLD VERSIONS OF THE PRODUCT BEFORE INSTALLING**, including any other fork:
-	+ Delete `<KSP_ROOT>/GameData/TweakScaleCompanion/Visuals`
+	+ Delete `<KSP_ROOT>/GameData/TweakScaleCompanion/Visuals` if existent
+	+ Delete `<KSP_ROOT>/GameData/TweakScaleCompanion/Frameworks`
 * Extract the package's `GameData/` folder into your KSP's as follows:
-	+ `<PACKAGE>/GameData/TweakScaleCompanion/Visuals` --> `<KSP_ROOT>/GameData/TweakScaleCompanion`
+	+ `<PACKAGE>/GameData/TweakScaleCompanion/Frameworks` --> `<KSP_ROOT>/GameData/TweakScaleCompanion`
 		- Overwrite any preexisting file.
 
 The following file layout must be present after installation:
@@ -38,7 +39,7 @@ The following file layout must be present after installation:
 		...
 		[TweakScaleCompanion]
 			[...]
-			[Visuals]
+			[Frameworks]
 				CHANGE_LOG.md
 				LICENSE*
 				NOTICE

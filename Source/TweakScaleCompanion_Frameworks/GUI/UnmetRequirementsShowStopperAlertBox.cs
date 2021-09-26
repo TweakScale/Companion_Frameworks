@@ -21,25 +21,28 @@
 
 */
 using UnityEngine;
+using KSPe.UI;
 
-namespace TweakScaleCompanion.Visuals.GUI
+namespace TweakScaleCompanion.Frameworks.GUI
 {
-	internal static class ShowStopperAlertBox
-	{
-		private static readonly string MSG = @"Unfortunately TweakScale Companion for Visuals got {0} Exceptions while checking the sanity of your instalment. It's not safe to continue, this will probably corrupt your savegames!
+    internal class UnmetRequirementsShowStopperAlertBox
+    {
+        private static readonly string MSG = @"Unfortunately TweakScale Companion for Frameworks is unable to proceed due unmet requiments!
 
-The KSP.log is listing every compromised part(s) on your installment, look for lines with '[TweakScaleCompanion_Visuals] ERROR: ' on the log line. Be aware that the parts being reported are not the culprits, but the Screaming Victims. There's no possible automated fix for these.";
+You need to have {0} installed, otherwise this Companion will fail to install itself, and the Assembly will probably crash while running - what can compromise your savegame.
 
-		private static readonly string AMSG = @"call for help on the TweakScale Companion for Visuals thread on the Forum (KSP will close). We will help you on diagnosing the Add'On that is troubling you. Publish your KSP.log on some file share service and mention it on the post";
+If you decide to proceed, do it with caution.";
 
-		internal static void Show(int failure_count)
+		private static readonly string AMSG = @"go to TweakScale Companion Program's page, look for the dependencies for Frameworks, download and install {0} and restart KSP (it will close now)";
+
+		internal static void Show(string failedRequirement)
 		{
 			KSPe.Common.Dialogs.ShowStopperAlertBox.Show(
-				string.Format(MSG, failure_count),
-				AMSG,
+				string.Format(MSG, failedRequirement),
+				string.Format(AMSG, failedRequirement),
 				() => { Application.OpenURL("https://forum.kerbalspaceprogram.com/index.php?/topic/192216-*"); Application.Quit(); }
 			);
-			Log.detail("\"Houston, we have a Problem!\" was displayed");
+			Log.detail("\"Houston, we have a Problem!\" about unmet dependencies was displayed");
 		}
-	}
+    }
 }

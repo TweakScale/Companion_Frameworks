@@ -1,4 +1,4 @@
-# TweakScale Companion :: Visuals :: Change Log
+# TweakScale Companion :: Frameworks :: Change Log
 
 * 2021-0919: 0.1.0.2 **Beta** (LisiasT) for KSP >= 1.8
 	+ A less than ideal initialisation routine were fixed.

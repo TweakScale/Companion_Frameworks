@@ -1,5 +1,5 @@
 ﻿/*
-	This file is part of TweakScaleCompanion_EyeCandies
+	This file is part of TweakScaleCompanion_Frameworks
 	© 2021 LisiasT : http://lisias.net <support@lisias.net>
 
 	THIE FILE is licensed to you under:
@@ -21,7 +21,7 @@ using System.Diagnostics;
 using System.Collections.Generic;
 #endif
 
-namespace TweakScaleCompanion.Visuals
+namespace TweakScaleCompanion.Frameworks
 {
 	public static class Log
 	{
