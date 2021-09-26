@@ -130,6 +130,7 @@ namespace TweakScaleCompanion.Frameworks.Waterfall
 
 			// The object can be destroyed before the full initialization cycle while KSP is booting, so we need to check first.
 			if (null == this.notifier) return;
+			this.notifier = null;
 		}
 
 		#endregion
