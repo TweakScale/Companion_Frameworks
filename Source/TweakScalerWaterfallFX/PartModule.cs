@@ -62,6 +62,9 @@ namespace TweakScaleCompanion.Frameworks.Waterfall
 			Log.dbg("OnStart {0} {1}", this.name, this.InstanceID, state);
 			base.OnStart(state);
 
+			// If the Integrator's DLL was not loaded, we are dead in the water.
+			if (!(this.enabled = Startup.OK_TO_GO)) return;
+
 			this.IsInitNeeded = true;
 			this.IsRestoreNeeded = true;
 		}

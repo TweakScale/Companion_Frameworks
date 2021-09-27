@@ -20,7 +20,6 @@
 	along with TweakScaleCompanion_Frameworks. If not, see <https://www.gnu.org/licenses/>.
 
 */
-using System;
 using UnityEngine;
 using KSPe.Annotations;
 
@@ -29,12 +28,17 @@ namespace TweakScaleCompanion.Frameworks.Waterfall
 	[KSPAddon(KSPAddon.Startup.Instantly, true)]
 	internal class Startup : MonoBehaviour
 	{
+		internal static bool OK_TO_GO = false;	// If we can't load the Integrator, there's no point on dry running the PartModule...
+
 		[UsedImplicitly]
 		private void Awake()
 		{
 			if (KSPe.Util.SystemTools.TypeFinder.ExistsByQualifiedName("Waterfall.Waterfall"))
-				using(KSPe.Util.SystemTools.Assembly.Loader a = new KSPe.Util.SystemTools.Assembly.Loader(typeof(Startup).Namespace.Replace(".",KSPe.IO.Path.DirectorySeparatorStr)))
+				using(KSPe.Util.SystemTools.Assembly.Loader a = new KSPe.Util.SystemTools.Assembly.Loader(typeof(Startup).Namespace.Replace(".", KSPe.IO.Path.DirectorySeparatorStr)))
+				{ 
 					a.LoadAndStartup("TweakScalerWaterfallFXIntegrator");
+					OK_TO_GO = true;
+				}
 		}
 	}
 }
