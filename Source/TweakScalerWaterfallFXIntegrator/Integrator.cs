@@ -26,7 +26,7 @@ using ModuleWaterfallFX = global::Waterfall.ModuleWaterfallFX;
 
 namespace TweakScaleCompanion.Frameworks.Waterfall.Integrator
 {
-	public class Integrator : IRescalable, Notifier
+	public class Implementation : IRescalable, Notifier
 	{
 		private readonly Listener listener;
 		private readonly Part part;
@@ -34,7 +34,7 @@ namespace TweakScaleCompanion.Frameworks.Waterfall.Integrator
 		private readonly ModuleWaterfallFX[] targetPartModules;
 		private readonly List<Data> originalFx = new List<Data>();
 
-		public Integrator(Part part, Listener listener)
+		public Implementation(Part part, Listener listener)
 		{
 			this.listener = listener;
 			this.part = part;

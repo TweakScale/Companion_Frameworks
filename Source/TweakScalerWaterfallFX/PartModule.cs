@@ -63,8 +63,8 @@ namespace TweakScaleCompanion.Frameworks.Waterfall
 			base.OnStart(state);
 
 			// If the Integrator's DLL was not loaded, we are dead in the water.
-			// Additionally, there's no point on running on Editor, as Waterfall is not active there.
-			if (!(this.enabled = (Startup.OK_TO_GO && HighLogic.LoadedSceneIsEditor))) return;
+			// Additionally, there's no point on running anywhere but the FlightScene, as Waterfall is only active there.
+			if (!(this.enabled = (Startup.OK_TO_GO && HighLogic.LoadedSceneIsFlight))) return;
 
 			this.IsInitNeeded = true;
 			this.IsRestoreNeeded = true;
@@ -166,9 +166,9 @@ namespace TweakScaleCompanion.Frameworks.Waterfall
 			catch (System.NullReferenceException e)
 			{
 				Log.error(this, e);
-				return true;	// Not ready yet. Signal the caller that he will need to run us again.
+				return true;	// Not ready yet. Signal the caller that he will need to call us again.
 			}
-			return false;		// Everything is fine. Signal the caller it will not need to call us again.
+			return false;		// Everything is fine. Signal the caller to do not call us again.
 		}
 
 		private static KSPe.Util.Log.Logger Log = KSPe.Util.Log.Logger.CreateForType<TweakScalerWaterfallFX>("TweakScaleCompanion.Frameworks", "TweakScalerWaterfallFX");

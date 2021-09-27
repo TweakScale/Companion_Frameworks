@@ -24,11 +24,11 @@ using TweakScale;
 
 namespace TweakScaleCompanion.Frameworks.Waterfall.Integrator
 {
-	internal class Scaler : TweakScale.IRescalable<Integrator>
+	internal class Scaler : TweakScale.IRescalable<Implementation>
 	{
 		private readonly TweakScale.IRescalable pm;
 
-		public Scaler(Integrator pm)
+		public Scaler(Implementation pm)
 		{
 			this.pm = pm;
 		}

@@ -25,9 +25,9 @@ using KSPe.UI;
 
 namespace TweakScaleCompanion.Frameworks.GUI
 {
-    internal class UnmetRequirementsShowStopperAlertBox
-    {
-        private static readonly string MSG = @"Unfortunately TweakScale Companion for Frameworks is unable to proceed due unmet requiments!
+	internal class UnmetRequirementsShowStopperAlertBox
+	{
+		private static readonly string MSG = @"Unfortunately TweakScale Companion for Frameworks is unable to proceed due unmet requiments!
 
 You need to have {0} installed, otherwise this Companion will fail to install itself, and the Assembly will probably crash while running - what can compromise your savegame.
 
@@ -42,7 +42,7 @@ If you decide to proceed, do it with caution.";
 				string.Format(AMSG, failedRequirement),
 				() => { Application.OpenURL("https://forum.kerbalspaceprogram.com/index.php?/topic/192216-*"); Application.Quit(); }
 			);
-			Log.detail("\"Houston, we have a Problem!\" about unmet dependencies was displayed");
+			Log.detail("\"Houston, we have a Problem!\" about unmet dependencies was displayed : {0}", failedRequirement);
 		}
     }
 }
