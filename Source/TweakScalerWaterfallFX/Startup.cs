@@ -22,12 +22,14 @@
 */
 using System;
 using UnityEngine;
+using KSPe.Annotations;
 
 namespace TweakScaleCompanion.Frameworks.Waterfall
 {
 	[KSPAddon(KSPAddon.Startup.Instantly, true)]
 	internal class Startup : MonoBehaviour
 	{
+		[UsedImplicitly]
 		private void Awake()
 		{
 			if (KSPe.Util.SystemTools.TypeFinder.ExistsByQualifiedName("Waterfall.Waterfall"))

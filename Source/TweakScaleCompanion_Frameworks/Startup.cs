@@ -20,14 +20,15 @@
 	along with TweakScaleCompanion_Frameworks. If not, see <https://www.gnu.org/licenses/>.
 
 */
-using System;
 using UnityEngine;
+using KSPe.Annotations;
 
 namespace TweakScaleCompanion.Frameworks
 {
 	[KSPAddon(KSPAddon.Startup.Instantly, true)]
 	internal class Startup : MonoBehaviour
 	{
+		[UsedImplicitly]
 		private void Start()
 		{
 			Log.force("Version {0}", Version.Text);
@@ -47,13 +48,11 @@ namespace TweakScaleCompanion.Frameworks
 
 		private void checkDependencies()
 		{
-			// Linq is giving me "Exception System.InvalidOperationException: Operation is not valid due to the current state of the object".
-			// So I got rid of that crap.
-			foreach (AssemblyLoader.LoadedAssembly assembly in AssemblyLoader.loadedAssemblies) if ("Scale" == assembly.assembly.GetName().Name)
-			{
-				Log.detail("Found {0}", assembly.assembly.FullName);
-				if (assembly.assembly.GetName().Version.CompareTo(new System.Version(2, 4, 6)) >= 0) return;
-				break;
+			if (KSPe.Util.SystemTools.Assembly.Finder.ExistsByName("Scale"))
+			{ 
+				System.Reflection.Assembly assembly = KSPe.Util.SystemTools.Assembly.Finder.FindByName("Scale");
+				Log.detail("Found {0}", assembly.FullName);
+				if (assembly.GetName().Version.CompareTo(new System.Version(2, 4, 6)) >= 0) return;
 			}
 			GUI.UnmetRequirementsShowStopperAlertBox.Show("TweakScale v2.4.6 or superior");
 		}

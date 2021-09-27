@@ -25,6 +25,8 @@ using System.Collections;
 
 using UnityEngine;
 
+using KSPe.Annotations;
+
 namespace TweakScaleCompanion.Frameworks
 {
 	[KSPAddon(KSPAddon.Startup.MainMenu, true)]
@@ -37,11 +39,13 @@ namespace TweakScaleCompanion.Frameworks
 
 		internal static bool isConcluded = false;
 
+		[UsedImplicitly]
 		private void Start()
 		{
 			StartCoroutine("SanityCheckCoroutine");
 		}
 
+		[UsedImplicitly]
 		private IEnumerator SanityCheckCoroutine()
 		{
 			SanityCheck.isConcluded = false;

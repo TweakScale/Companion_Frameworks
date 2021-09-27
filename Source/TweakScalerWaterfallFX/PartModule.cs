@@ -20,7 +20,7 @@
 	along with TweakScaleCompanion_Frameworks. If not, see <https://www.gnu.org/licenses/>.
 
 */
-
+using KSPe.Annotations;
 using TweakScaleCompanion.Frameworks.Waterfall.Integrator;
 
 namespace TweakScaleCompanion.Frameworks.Waterfall
@@ -103,6 +103,7 @@ namespace TweakScaleCompanion.Frameworks.Waterfall
 
 		#region Unity Life Cycle
 
+		[UsedImplicitly]
 		private void Update()
 		{
 			if (this.IsInitNeeded)
@@ -124,6 +125,7 @@ namespace TweakScaleCompanion.Frameworks.Waterfall
 			}
 		}
 
+		[UsedImplicitly]
 		private void OnDestroy()
 		{
 			Log.dbg("OnDestroy {0}", this.InstanceID);
