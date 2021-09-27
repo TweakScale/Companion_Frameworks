@@ -148,6 +148,7 @@ namespace TweakScaleCompanion.Frameworks.Waterfall
 		void Integrator.Listener.NotifyRestoreNeeded()
 		{
 			this.IsRestoreNeeded = true;
+			this.enabled = true;
 		}
 
 		string Listener.GetName()
