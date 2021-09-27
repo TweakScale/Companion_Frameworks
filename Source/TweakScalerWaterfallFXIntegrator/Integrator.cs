@@ -49,10 +49,7 @@ namespace TweakScaleCompanion.Frameworks.Waterfall.Integrator
 
 		bool Notifier.IsEnabled()
 		{
-			bool enabled = false;
-			foreach (ModuleWaterfallFX m in this.targetPartModules)
-				enabled |= m.enabled;
-			return enabled;
+			return this.IsEnabled();
 		}
 
 		void Notifier.Init()
@@ -81,17 +78,26 @@ namespace TweakScaleCompanion.Frameworks.Waterfall.Integrator
 		{
 			Log.dbg("OnRescale {0} to {1}", this.listener.GetName(), this.InstanceID, factor.absolute.linear);
 
-			this.listener.NotifyRestoreNeeded();
+			if (this.IsEnabled())
+				this.listener.NotifyRestoreNeeded();
 		}
 
 		#endregion
+
+		private bool IsEnabled()
+		{
+			bool enabled = false;
+			foreach (ModuleWaterfallFX m in this.targetPartModules)
+				enabled |= m.enabled;
+			return enabled;
+		}
 
 		private void scale(Data data, ScalingFactor factor)
 		{
 			data.fx.ApplyTemplateOffsets(data.position, data.fx.TemplateRotationOffset, data.meshScale * factor.absolute.linear);
 		}
 
-        private static KSPe.Util.Log.Logger Log = KSPe.Util.Log.Logger.CreateForType<TweakScalerWaterfallFX>("TweakScaleCompanion_Frameworks", "TweakScalerWaterfallFX");
+		private static KSPe.Util.Log.Logger Log = KSPe.Util.Log.Logger.CreateForType<TweakScalerWaterfallFX>("TweakScaleCompanion_Frameworks", "TweakScalerWaterfallFX");
 		private string InstanceID => string.Format("{0}:{1:X}", this.part.name, (null == this.part ? 0 : this.part.GetInstanceID()));
 	}
 }

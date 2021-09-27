@@ -63,7 +63,8 @@ namespace TweakScaleCompanion.Frameworks.Waterfall
 			base.OnStart(state);
 
 			// If the Integrator's DLL was not loaded, we are dead in the water.
-			if (!(this.enabled = Startup.OK_TO_GO)) return;
+			// Additionally, there's no point on running on Editor, as Waterfall is not active there.
+			if (!(this.enabled = (Startup.OK_TO_GO && HighLogic.LoadedSceneIsEditor))) return;
 
 			this.IsInitNeeded = true;
 			this.IsRestoreNeeded = true;
@@ -90,9 +91,10 @@ namespace TweakScaleCompanion.Frameworks.Waterfall
 
 			// Needed because I can't intialize this on OnAwake as this module can be awaken before ModuleWaterfallFX,
 			// and OnRescale can be fired before OnLoad.
-			if (null == this.notifier)
-				this.IsInitNeeded = true;
+			if (null == this.notifier) this.IsInitNeeded = true;
+
 			this.IsRestoreNeeded = true;
+			this.enabled = true; // To allow the "FSM" on Update to run!
 		}
 
 		public override void OnSave(ConfigNode node)
@@ -116,9 +118,10 @@ namespace TweakScaleCompanion.Frameworks.Waterfall
 				// Note: On KSP 1.12, the this.part.Modules are not completely filed as OnStart is called, so now we need
 				// to do it here.
 				// See https://forum.kerbalspaceprogram.com/index.php?/topic/192216-tweakscale-companion-program-2021-0201/&do=findComment&comment=3995406
-				if (this.IsInitNeeded = this.InitModule())
-					if (HighLogic.LoadedSceneIsFlight) // For some reason I could not understand, I can't initialise Waterfall from the Editor.
-						this.notifier.Init();
+				if (!(this.IsInitNeeded = this.InitModule()))
+					this.notifier.Init();
+				else
+					return;	// Module not initialised. Let's try again next cycle.
 			}
 
 			if (this.IsRestoreNeeded)
@@ -126,6 +129,8 @@ namespace TweakScaleCompanion.Frameworks.Waterfall
 				this.notifier.Update();
 				this.IsRestoreNeeded = false;
 			}
+
+			this.enabled = false;
 		}
 
 		[UsedImplicitly]
@@ -161,10 +166,9 @@ namespace TweakScaleCompanion.Frameworks.Waterfall
 			catch (System.NullReferenceException e)
 			{
 				Log.error(this, e);
-				return false;
+				return true;	// Not ready yet. Signal the caller that he will need to run us again.
 			}
-			this.enabled = this.notifier.IsEnabled();
-			return true;
+			return false;		// Everything is fine. Signal the caller it will not need to call us again.
 		}
 
 		private static KSPe.Util.Log.Logger Log = KSPe.Util.Log.Logger.CreateForType<TweakScalerWaterfallFX>("TweakScaleCompanion.Frameworks", "TweakScalerWaterfallFX");
