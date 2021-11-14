@@ -1,5 +1,10 @@
 # TweakScale Companion :: Frameworks :: Change Log
 
+* 2021-1114: 0.3.0.0 **Beta** (LisiasT) for KSP >= 1.8
+	+ New (Work In Progress!!) support for:
+		- [Cryo Tanks](https://forum.kerbalspaceprogram.com/index.php?/topic/195042-*/)
+		- [Space Dust](https://forum.kerbalspaceprogram.com/index.php?/topic/197723-*/)
+		- [System Heat](https://forum.kerbalspaceprogram.com/index.php?/topic/193909-*/)
 * 2021-0926: 0.2.0.0 **Beta** (LisiasT) for KSP >= 1.8
 	+ Refactoring:
 		- Using recent KSPe.Light.TweakScale features to allow selective loading of DLLs bound to 3rd-parties, allowing the Companion to be used on installments where these dependencies are not preset.
