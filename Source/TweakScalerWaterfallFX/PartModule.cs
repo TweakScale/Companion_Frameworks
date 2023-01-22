@@ -62,9 +62,7 @@ namespace TweakScaleCompanion.Frameworks.Waterfall
 			Log.dbg("OnStart {0} {1}", this.name, this.InstanceID, state);
 			base.OnStart(state);
 
-			// If the Integrator's DLL was not loaded, we are dead in the water.
-			// Additionally, there's no point on running anywhere but the FlightScene, as Waterfall is only active there.
-			if (!(this.enabled = (Startup.OK_TO_GO && HighLogic.LoadedSceneIsFlight))) return;
+			if (!this.EnableMe()) return;
 
 			this.IsInitNeeded = true;
 			this.IsRestoreNeeded = true;
@@ -75,12 +73,13 @@ namespace TweakScaleCompanion.Frameworks.Waterfall
 			Log.dbg("OnCopy {0} from {1:X}", this.InstanceID, fromModule.part.GetInstanceID());
 			base.OnCopy(fromModule);
 
+			if (!this.EnableMe()) return;
+
 			// Needed because I can't intialize this on OnAwake as this module can be awaken before ModuleWaterfallFX,
 			// and OnRescale can be fired before OnLoad.
 			if (null == this.notifier) this.IsInitNeeded = true;
 
 			this.IsRestoreNeeded = true;
-			this.enabled = true; // To allow the "FSM" on Update to run!
 		}
 
 		public override void OnLoad(ConfigNode node)
@@ -89,12 +88,13 @@ namespace TweakScaleCompanion.Frameworks.Waterfall
 			base.OnLoad(node);
 			if (null == node) return;   // Load from Prefab - not interesting.
 
+			if (!this.EnableMe()) return;
+
 			// Needed because I can't intialize this on OnAwake as this module can be awaken before ModuleWaterfallFX,
 			// and OnRescale can be fired before OnLoad.
 			if (null == this.notifier) this.IsInitNeeded = true;
 
 			this.IsRestoreNeeded = true;
-			this.enabled = true; // To allow the "FSM" on Update to run!
 		}
 
 		public override void OnSave(ConfigNode node)
@@ -155,6 +155,10 @@ namespace TweakScaleCompanion.Frameworks.Waterfall
 		{
 			return this.name;
 		}
+
+		// If the Integrator's DLL was not loaded, we are dead in the water.
+		// Additionally, there's no point on running anywhere but the FlightScene, as Waterfall is only active there.
+		private bool EnableMe() => this.enabled = (Startup.OK_TO_GO && HighLogic.LoadedSceneIsFlight);
 
 		private bool InitModule()
 		{
