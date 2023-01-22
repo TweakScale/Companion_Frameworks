@@ -1,6 +1,6 @@
 ﻿/*
 	This file is part of TweakScaleCompanion_EyeCandies
-	© 2021 LisiasT : http://lisias.net <support@lisias.net>
+	© 2021-2023 LisiasT : http://lisias.net <support@lisias.net>
 
 	TweakScaleCompanion_EyeCandies is double licensed, as follows:
 
