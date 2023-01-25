@@ -15,7 +15,10 @@ GD_DLLS=""
 GD_PRIORITY=""
 LIB_DLLS=""
 
-declare -A EXCEPTION_RULES=( ["TweakScalerWaterfallFX"]="./Waterfall" ["TweakScalerWaterfallFXIntegrator"]="./Waterfall/PluginData" )
+declare -A EXCEPTION_RULES=( \
+	["TweakScalerWaterfallFX"]="./Waterfall" ["TweakScalerWaterfallFXIntegrator"]="./Waterfall/PluginData" \
+	["TweakScalerTestFlightCore"]="./TestFlightCore" ["TweakScalerTestFlightCoreRescalable"]="./TestFlightCore/PluginData" \
+	)
 EXCEPTION_DLLS=`{ for K in "${!EXCEPTION_RULES[@]}"; do echo $(basename ${EXCEPTION_RULES[$K]}); done } | sort -u | tr '\n' ' '`
 EXCEPTION_DIRS=`{ for K in "${!EXCEPTION_RULES[@]}"; do echo $(dirname ${EXCEPTION_RULES[$K]}); done } | sort -u | tr '\n' ' '`
 

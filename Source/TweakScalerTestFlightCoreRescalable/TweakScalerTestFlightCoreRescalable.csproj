@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6C7071F1-A9CC-4C57-98BD-90521B51A47A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>TweakScalerTestFlightCoreRescalable</RootNamespace>
+    <AssemblyName>TweakScalerTestFlightCoreRescalable</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <BaseIntermediateOutputPath>..\..\obj\TweakScalerTestFlightCoreRescalable</BaseIntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\..\..\..\..\..\LIB\managed\1.2.2\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Scale_Redist.2.5">
+      <HintPath>..\..\..\..\..\..\..\LIB\plugins\Scale_Redist.2.5.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TestFlightCore">
+      <HintPath>..\..\..\..\..\..\..\LIB\plugins\TestFlightCore.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\..\..\..\..\..\LIB\managed\1.2.2\UnityEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="KSPe.Light.TweakScale">
+      <HintPath>..\..\..\..\..\..\..\LIB\plugins\KSPe.Light.TweakScale.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rescalable.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TweakScaleCompanion_Frameworks\TweakScaleCompanion_Frameworks.csproj">
+      <Project>{4A788998-5329-475F-BE34-1521F5DF78EB}</Project>
+      <Name>TweakScaleCompanion_Frameworks</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TweakScalerTestFlightCore\TweakScalerTestFlightCore.csproj">
+      <Project>{C36749C4-A5E2-4C6B-87F6-404D0DB09EE5}</Project>
+      <Name>TweakScalerTestFlightCore</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

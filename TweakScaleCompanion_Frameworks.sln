@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TweakScalerWaterfallFX", "S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TweakScalerWaterfallFXIntegrator", "Source\TweakScalerWaterfallFXIntegrator\TweakScalerWaterfallFXIntegrator.csproj", "{34D80B61-6B7C-4CC0-AF9E-0BFC452026BF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TweakScalerTestFlightCore", "Source\TweakScalerTestFlightCore\TweakScalerTestFlightCore.csproj", "{C36749C4-A5E2-4C6B-87F6-404D0DB09EE5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TweakScalerTestFlightCoreRescalable", "Source\TweakScalerTestFlightCoreRescalable\TweakScalerTestFlightCoreRescalable.csproj", "{6C7071F1-A9CC-4C57-98BD-90521B51A47A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{34D80B61-6B7C-4CC0-AF9E-0BFC452026BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34D80B61-6B7C-4CC0-AF9E-0BFC452026BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34D80B61-6B7C-4CC0-AF9E-0BFC452026BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C36749C4-A5E2-4C6B-87F6-404D0DB09EE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C36749C4-A5E2-4C6B-87F6-404D0DB09EE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C36749C4-A5E2-4C6B-87F6-404D0DB09EE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C36749C4-A5E2-4C6B-87F6-404D0DB09EE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C7071F1-A9CC-4C57-98BD-90521B51A47A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C7071F1-A9CC-4C57-98BD-90521B51A47A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C7071F1-A9CC-4C57-98BD-90521B51A47A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C7071F1-A9CC-4C57-98BD-90521B51A47A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
