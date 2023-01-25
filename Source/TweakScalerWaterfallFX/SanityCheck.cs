@@ -1,11 +1,10 @@
 ﻿/*
-	This file is part of TweakScaleCompanion_Frameworks
+	This file is part of TweakScalerWaterfallFX, a component of TweakScaleCompanion_Frameworks
 	© 2021-2023 LisiasT : http://lisias.net <support@lisias.net>
 
 	TweakScaleCompanion_Frameworks is double licensed, as follows:
-
-	* SKL 1.0 : https://ksp.lisias.net/SKL-1_0.txt
-	* GPL 2.0 : https://www.gnu.org/licenses/gpl-2.0.txt
+		* SKL 1.0 : https://ksp.lisias.net/SKL-1_0.txt
+		* GPL 2.0 : https://www.gnu.org/licenses/gpl-2.0.txt
 
 	And you are allowed to choose the License that better suit your needs.
 
@@ -27,7 +26,7 @@ using UnityEngine;
 
 using KSPe.Annotations;
 
-namespace TweakScaleCompanion.Frameworks
+namespace TweakScaleCompanion.Frameworks.Waterfall
 {
 	[KSPAddon(KSPAddon.Startup.MainMenu, true)]
 	internal class SanityCheck : MonoBehaviour

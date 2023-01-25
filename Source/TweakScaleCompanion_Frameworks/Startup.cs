@@ -3,9 +3,8 @@
 	© 2021-2023 LisiasT : http://lisias.net <support@lisias.net>
 
 	TweakScaleCompanion_Frameworks is double licensed, as follows:
-
-	* SKL 1.0 : https://ksp.lisias.net/SKL-1_0.txt
-	* GPL 2.0 : https://www.gnu.org/licenses/gpl-2.0.txt
+		* SKL 1.0 : https://ksp.lisias.net/SKL-1_0.txt
+		* GPL 2.0 : https://www.gnu.org/licenses/gpl-2.0.txt
 
 	And you are allowed to choose the License that better suit your needs.
 
@@ -54,6 +53,7 @@ namespace TweakScaleCompanion.Frameworks
 				Log.detail("Found {0}", assembly.FullName);
 				if (assembly.GetName().Version.CompareTo(new System.Version(2, 4, 6)) >= 0) return;
 			}
+			// FIXME: Change to 2.5 when Modular Flight Integrator goes to mainstream!
 			GUI.UnmetRequirementsShowStopperAlertBox.Show("TweakScale v2.4.6 or superior");
 		}
 	}

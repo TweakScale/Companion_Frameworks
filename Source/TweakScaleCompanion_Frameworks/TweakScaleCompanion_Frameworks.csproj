@@ -52,7 +52,6 @@
       <DependentUpon>Version.tt</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
-    <Compile Include="SanityCheck.cs" />
     <Compile Include="Log.cs" />
     <Compile Include="GUI\ShowStopperAlertBox.cs" />
     <Compile Include="GUI\UnmetRequirementsShowStopperAlertBox.cs" />

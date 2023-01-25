@@ -2,7 +2,7 @@
 	This file is part of TweakScaleCompanion_Frameworks
 	© 2021-2023 LisiasT : http://lisias.net <support@lisias.net>
 
-	THIE FILE is licensed to you under:
+	THIS FILE is licensed to you under:
 
 	* WTFPL - http://www.wtfpl.net
 		* Everyone is permitted to copy and distribute verbatim or modified
@@ -27,38 +27,43 @@ namespace TweakScaleCompanion.Frameworks
 	{
 		private static readonly Logger log = Logger.CreateForType<Startup>();
 
-		internal static void force(string msg, params object[] @params)
+		public static void force(string msg, params object[] @params)
 		{
 			log.force(msg, @params);
 		}
 
-		internal static void info(string msg, params object[] @params)
+		public static void info(string msg, params object[] @params)
 		{
 			log.info(msg, @params);
 		}
 
-		internal static void warn(string msg, params object[] @params)
+		public static void warn(string msg, params object[] @params)
 		{
 			log.warn(msg, @params);
 		}
 
-		internal static void detail(string msg, params object[] @params)
+		public static void detail(string msg, params object[] @params)
 		{
 			log.detail(msg, @params);
 		}
 
-		internal static void error(Exception e, object offended)
+		public static void error(Exception e, object offended)
 		{
 			log.error(offended, e);
 		}
 
-		internal static void error(string msg, params object[] @params)
+		public static void error(string msg, params object[] @params)
 		{
 			log.error(msg, @params);
 		}
 
+		public static void error(Exception e, string msg, params object[] @params)
+		{
+			log.error(e, msg, @params);
+		}
+
 		[ConditionalAttribute("DEBUG")]
-		internal static void dbg(string msg, params object[] @params)
+		public static void dbg(string msg, params object[] @params)
 		{
 			log.trace(msg, @params);
 		}
@@ -68,7 +73,7 @@ namespace TweakScaleCompanion.Frameworks
 #endif
 
 		[ConditionalAttribute("DEBUG")]
-		internal static void dbgOnce(string msg, params object[] @params)
+		public static void dbgOnce(string msg, params object[] @params)
 		{
 			string new_msg = string.Format(msg, @params);
 #if DEBUG

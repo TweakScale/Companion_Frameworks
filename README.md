@@ -10,6 +10,7 @@ Adds (up to date) TweakScale /L patches for Add'Ons that adds features to KSP it
 	+ [Forum](https://forum.kerbalspaceprogram.com/index.php?/topic/192216-tweakscale-companion-program/)
 	+ [Project's README](https://github.com/net-lisias-ksp/TweakScaleCompanion_Frameworks/blob/master/README.md)
 	+ [Install Instructions](https://github.com/net-lisias-ksp/TweakScaleCompanion_Frameworks/blob/master/INSTALL.md)
+	+ [Known Issues](./KNOWN_ISSUES/md)
 	+ [Change Log](./CHANGE_LOG.md)
 * Official Distribution Sites:
 	+ [Source and Binaries](https://github.com/net-lisias-ksp/TweakScaleCompanion_Frameworks) on GitHub.

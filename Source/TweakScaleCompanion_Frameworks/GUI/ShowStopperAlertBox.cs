@@ -24,7 +24,7 @@ using UnityEngine;
 
 namespace TweakScaleCompanion.Frameworks.GUI
 {
-	internal static class ShowStopperAlertBox
+	public static class ShowStopperAlertBox
 	{
 		private static readonly string MSG = @"Unfortunately TweakScale Companion for Frameworks got {0} Exceptions while checking the sanity of your instalment. It's not safe to continue, this will probably corrupt your savegames!
 
@@ -32,7 +32,7 @@ The KSP.log is listing every compromised part(s) on your installment, look for l
 
 		private static readonly string AMSG = @"call for help on the TweakScale Companion for Frameworks thread on the Forum (KSP will close). We will help you on diagnosing the Add'On that is troubling you. Publish your KSP.log on some file share service and mention it on the post";
 
-		internal static void Show(int failure_count)
+		public static void Show(int failure_count)
 		{
 			KSPe.Common.Dialogs.ShowStopperAlertBox.Show(
 				string.Format(MSG, failure_count),

@@ -3,9 +3,8 @@
 	© 2021-2023 LisiasT : http://lisias.net <support@lisias.net>
 
 	TweakScaleCompanion_Frameworks is double licensed, as follows:
-
-	* SKL 1.0 : https://ksp.lisias.net/SKL-1_0.txt
-	* GPL 2.0 : https://www.gnu.org/licenses/gpl-2.0.txt
+		* SKL 1.0 : https://ksp.lisias.net/SKL-1_0.txt
+		* GPL 2.0 : https://www.gnu.org/licenses/gpl-2.0.txt
 
 	And you are allowed to choose the License that better suit your needs.
 
@@ -162,6 +161,7 @@ namespace TweakScaleCompanion.Frameworks.Waterfall
 
 		private bool InitModule()
 		{
+			this.notifier = null;
 			try
 			{
 				System.Type type = KSPe.Util.SystemTools.Type.Finder.FindByInterfaceName("TweakScaleCompanion.Frameworks.Waterfall.Integrator.Notifier");
