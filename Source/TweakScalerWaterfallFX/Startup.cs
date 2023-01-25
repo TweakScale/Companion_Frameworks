@@ -1,5 +1,5 @@
 ﻿/*
-	This file is part of TweakScaleCompanion_Frameworks
+	This file is part of TweakScalerModuleWaterfallFX, a component of TweakScaleCompanion_Frameworks
 	© 2021-2023 LisiasT : http://lisias.net <support@lisias.net>
 
 	TweakScaleCompanion_Frameworks is double licensed, as follows:

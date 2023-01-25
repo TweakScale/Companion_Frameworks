@@ -53,7 +53,6 @@ namespace TweakScaleCompanion.Frameworks
 				Log.detail("Found {0}", assembly.FullName);
 				if (assembly.GetName().Version.CompareTo(new System.Version(2, 4, 6)) >= 0) return;
 			}
-			// FIXME: Change to 2.5 when Modular Flight Integrator goes to mainstream!
 			GUI.UnmetRequirementsShowStopperAlertBox.Show("TweakScale v2.4.6 or superior");
 		}
 	}

@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 // Change them to the values specific to your project.
 
 [assembly: AssemblyTitle("TweakScalerWaterfallFXIntegrator")]
-[assembly: AssemblyDescription("Integrates the TweakScaler to the Target Module")]
+[assembly: AssemblyDescription("Integrates the TweakScaler to WaterfallFX")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany(TweakScaleCompanion.Frameworks.LegalMamboJambo.Company)]
 [assembly: AssemblyProduct(TweakScaleCompanion.Frameworks.LegalMamboJambo.Product)]
@@ -21,10 +21,3 @@ using System.Runtime.CompilerServices;
 
 [assembly: AssemblyVersion(TweakScaleCompanion.Frameworks.Version.Number)]
 [assembly: AssemblyFileVersion(TweakScaleCompanion.Frameworks.Version.Number)]
-[assembly: KSPAssembly("TweakScalerWaterfallFXIntegrator", TweakScaleCompanion.Frameworks.Version.major, TweakScaleCompanion.Frameworks.Version.minor)]
-[assembly: KSPAssemblyDependency("TweakScaleCompanion_Visuals", TweakScaleCompanion.Frameworks.Version.major, TweakScaleCompanion.Frameworks.Version.minor)]
-[assembly: KSPAssemblyDependency("TweakScalerModuleWaterfallFX", TweakScaleCompanion.Frameworks.Version.major, TweakScaleCompanion.Frameworks.Version.minor)]
-[assembly: KSPAssemblyDependency("Waterfall", 0, 0)]
-[assembly: KSPAssemblyDependency("KSPe.Light.TweakScale", 2, 4)]
-[assembly: KSPAssemblyDependency("Scale", 2, 4)]
-//[assembly: KSPAssemblyDependency("Scale_Redist", 1, 0)] // KSP 1.12.2 screwed up the Dependency check!!!
