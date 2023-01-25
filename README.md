@@ -24,6 +24,7 @@ Adds (up to date) TweakScale /L patches for some KSP Enhancing Add'Ons that need
 
 Currently supports:
 
+* [Test Flight](https://forum.kerbalspaceprogram.com/index.php?/topic/99043-*)
 * [Waterfall](https://forum.kerbalspaceprogram.com/index.php?/topic/196309-*)
 
 
@@ -67,7 +68,7 @@ See [NOTICE](./NOTICE) for further copyright and trademarks notices.
 
 There's no upstream, I'm (g)ROOT. :)
 
-## Refences
+## References
 
 * TweakScale /L ([LisiasT](https://forum.kerbalspaceprogram.com/index.php?/profile/187168-lisias/))
 	+ [Forum](https://forum.kerbalspaceprogram.com/index.php?/topic/179030-*)
@@ -75,6 +76,9 @@ There's no upstream, I'm (g)ROOT. :)
 	+ [SpaceDock](https://spacedock.info/mod/127/TweakScale)
 	+ [Homepage](http://ksp.lisias.net/add-ons/TweakScale) on L Aerospace
 	+ [GitHub](https://github.com/net-lisias-ksp/TweakScale).
+* Test Flight ([Agthorn](https://forum.kerbalspaceprogram.com/index.php?/profile/99662-agathorn/))
+	+ [Forum](https://forum.kerbalspaceprogram.com/index.php?/topic/99043-122-testflight-v180-01-may-2017-bring-flight-testing-to-ksp/) 
+	+ [Github](https://github.com/KSP-RO/TestFlight/releases)
 * Waterfall ([Nertea](https://forum.kerbalspaceprogram.com/index.php?/profile/83952-nertea/))
 	+ [Forum](https://forum.kerbalspaceprogram.com/index.php?/topic/196309-*)
 		+ [GitHub](https://github.com/post-kerbin-mining-corporation/Waterfall).
