@@ -25,6 +25,7 @@ namespace TweakScaleCompanion.Frameworks.GUI
 {
 	public static class ShowStopperAlertBox
 	{
+		private const string URL = "https://ksp.lisias.net/add-ons/TweakScaleCompanion/Support/Frameworks/show-stopper";
 		private static readonly string MSG = @"Unfortunately TweakScale Companion for Frameworks got {0} Exceptions while checking the sanity of your instalment. It's not safe to continue, this will probably corrupt your savegames!
 
 The KSP.log is listing every compromised part(s) on your installment, look for lines with '[TweakScaleCompanion_Frameworks] ERROR: ' on the log line. Be aware that the parts being reported are not the culprits, but the Screaming Victims. There's no possible automated fix for these.";
@@ -36,7 +37,7 @@ The KSP.log is listing every compromised part(s) on your installment, look for l
 			KSPe.Common.Dialogs.ShowStopperAlertBox.Show(
 				string.Format(MSG, failure_count),
 				AMSG,
-				() => { Application.OpenURL("https://forum.kerbalspaceprogram.com/index.php?/topic/192216-*"); Application.Quit(); }
+				() => { KSPe.Util.CkanTools.OpenURL(URL); Application.Quit(); }
 			);
 			Log.detail("\"Houston, we have a Problem!\" was displayed");
 		}
