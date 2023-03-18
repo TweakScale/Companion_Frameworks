@@ -74,10 +74,11 @@ There's no upstream, I'm (g)ROOT. :)
 ## References
 
 * TweakScale /L ([LisiasT](https://forum.kerbalspaceprogram.com/index.php?/profile/187168-lisias/))
-	+ [Forum](https://forum.kerbalspaceprogram.com/index.php?/topic/179030-*)
+	+ [Homepage](http://ksp.lisias.net/add-ons/TweakScale) on L Aerospace
+	+ [Reddit](https://www.reddit.com/r/TweakScale/)
+	+ [Forum](https://forum.kerbalspaceprogram.com/index.php?/topic/179030-*/)
 	+ [CurseForge](https://kerbal.curseforge.com/projects/tweakscale)
 	+ [SpaceDock](https://spacedock.info/mod/127/TweakScale)
-	+ [Homepage](http://ksp.lisias.net/add-ons/TweakScale) on L Aerospace
 	+ [GitHub](https://github.com/net-lisias-ksp/TweakScale)
 * Test Flight ([Agthorn](https://forum.kerbalspaceprogram.com/index.php?/profile/99662-agathorn/))
 	+ [Forum](https://forum.kerbalspaceprogram.com/index.php?/topic/99043-122-testflight-v180-01-may-2017-bring-flight-testing-to-ksp/) 
