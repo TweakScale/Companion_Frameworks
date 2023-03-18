@@ -38,17 +38,17 @@ namespace TweakScaleCompanion.Frameworks
 
 		private void checkDependencies()
 		{
-			if (KSPe.Util.SystemTools.Assembly.Finder.ExistsByName("Scale"))
+			if (KSPe.Util.SystemTools.Assembly.Exists.ByName("Scale"))
 			{ 
-				System.Reflection.Assembly assembly = KSPe.Util.SystemTools.Assembly.Finder.FindByName("Scale");
-				this.isTweakScale25 = (assembly.GetName().Version.CompareTo(new System.Version(2, 5, 0)) >= 0);
+				System.Reflection.Assembly assembly = KSPe.Util.SystemTools.Assembly.Find.ByName("Scale");
+				this.isTweakScale25 = (assembly.GetName().Version.CompareTo(new System.Version(2, 4, 7)) >= 0);
 			}
 		}
 
 		private void loadDLLs()
 		{
-			using (KSPe.Util.SystemTools.Assembly.Loader a = new KSPe.Util.SystemTools.Assembly.Loader(typeof(Startup).Namespace.Replace(".", KSPe.IO.Path.DirectorySeparatorStr)))
-				if (this.isTweakScale25 && KSPe.Util.SystemTools.Assembly.Finder.ExistsByName("TestFlightCore"))
+			using (KSPe.Util.SystemTools.Assembly.Loader a = new KSPe.Util.SystemTools.Assembly.Loader<Frameworks.Startup>())
+				if (this.isTweakScale25 && KSPe.Util.SystemTools.Assembly.Exists.ByName("TestFlightCore"))
 					a.LoadAndStartup("TweakScalerTestFlightCore");
 		}
 	}

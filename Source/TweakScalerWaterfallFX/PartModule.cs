@@ -164,7 +164,7 @@ namespace TweakScaleCompanion.Frameworks.Waterfall
 			this.notifier = null;
 			try
 			{
-				System.Type type = KSPe.Util.SystemTools.Type.Finder.FindByInterfaceName("TweakScaleCompanion.Frameworks.Waterfall.Integrator.Notifier");
+				System.Type type = KSPe.Util.SystemTools.Type.Find.ByInterfaceName("TweakScaleCompanion.Frameworks.Waterfall.Integrator.Notifier");
 				System.Reflection.ConstructorInfo ctor = type.GetConstructor(new[] { typeof(Part), typeof(Listener) });
 				this.notifier = (Notifier) ctor.Invoke(new object[] { this.part, (Listener)this });
 			}

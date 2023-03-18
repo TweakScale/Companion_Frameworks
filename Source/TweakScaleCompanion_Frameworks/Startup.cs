@@ -25,7 +25,7 @@ using KSPe.Annotations;
 namespace TweakScaleCompanion.Frameworks
 {
 	[KSPAddon(KSPAddon.Startup.Instantly, true)]
-	internal class Startup : MonoBehaviour
+	public class Startup : MonoBehaviour
 	{
 		[UsedImplicitly]
 		private void Start()
@@ -34,7 +34,7 @@ namespace TweakScaleCompanion.Frameworks
 
 			try
 			{
-				KSPe.Util.Installation.Check<Startup>("TweakScaleCompanion_Frameworks", "TweakScaleCompanion/Frameworks", null);
+				KSPe.Util.Installation.Check<Startup>();
 			}
 			catch (KSPe.Util.InstallmentException e)
 			{
@@ -47,13 +47,13 @@ namespace TweakScaleCompanion.Frameworks
 
 		private void checkDependencies()
 		{
-			if (KSPe.Util.SystemTools.Assembly.Finder.ExistsByName("Scale"))
+			if (KSPe.Util.SystemTools.Assembly.Exists.ByName("Scale"))
 			{ 
-				System.Reflection.Assembly assembly = KSPe.Util.SystemTools.Assembly.Finder.FindByName("Scale");
+				System.Reflection.Assembly assembly = KSPe.Util.SystemTools.Assembly.Find.ByName("Scale");
 				Log.detail("Found {0}", assembly.FullName);
-				if (assembly.GetName().Version.CompareTo(new System.Version(2, 4, 6)) >= 0) return;
+				if (assembly.GetName().Version.CompareTo(new System.Version(2, 4, 7)) >= 0) return;
 			}
-			GUI.UnmetRequirementsShowStopperAlertBox.Show("TweakScale v2.4.6 or superior");
+			GUI.UnmetRequirementsShowStopperAlertBox.Show("TweakScale v2.4.7 or superior");
 		}
 	}
 }

@@ -21,4 +21,4 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyVersion(TweakScaleCompanion.Frameworks.Version.Number)]
 [assembly: AssemblyFileVersion(TweakScaleCompanion.Frameworks.Version.Number)]
 [assembly: KSPAssembly("TweakScaleCompanion_Frameworks", TweakScaleCompanion.Frameworks.Version.major, TweakScaleCompanion.Frameworks.Version.minor)]
-[assembly: KSPAssemblyDependency("KSPe.Light.TweakScale", 2, 4)]
+[assembly: KSPAssemblyDependency("KSPe.Light.TweakScale", 2, 5)]
