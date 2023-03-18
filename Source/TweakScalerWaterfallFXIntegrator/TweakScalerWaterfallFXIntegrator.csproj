@@ -63,6 +63,7 @@
     <Compile Include="Scaler.cs" />
     <Compile Include="Data.cs" />
     <Compile Include="Integrator.cs" />
+    <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TweakScalerWaterfallFX\TweakScalerWaterfallFX.csproj">
