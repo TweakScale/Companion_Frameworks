@@ -1,5 +1,10 @@
 # TweakScale Companion :: Frameworks :: Change Log
 
+* 2023-0318: 0.4.0.0 **Beta** (LisiasT) for KSP >= 1.2.2
+	+ Removes deprecated calls to KSPe. Minimum target is v2.5 now.
+	+ Renders it compatible to TweakScale 2.4.7.0 and superior only.
+	+ Formalises support for:
+		- [Test Flight](https://forum.kerbalspaceprogram.com/index.php?/topic/99043-*/)
 * 2021-1114: 0.3.0.0 **Beta** (LisiasT) for KSP >= 1.8
 	+ New (Work In Progress!!) support for:
 		- [Cryo Tanks](https://forum.kerbalspaceprogram.com/index.php?/topic/195042-*/)

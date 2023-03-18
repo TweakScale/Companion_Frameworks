@@ -24,8 +24,11 @@ Adds (up to date) TweakScale /L patches for some KSP Enhancing Add'Ons that need
 
 Currently supports:
 
-* [Test Flight](https://forum.kerbalspaceprogram.com/index.php?/topic/99043-*)
-* [Waterfall](https://forum.kerbalspaceprogram.com/index.php?/topic/196309-*)
+* [Test Flight](https://forum.kerbalspaceprogram.com/index.php?/topic/99043-*/)
+* [Cryo Tanks](https://forum.kerbalspaceprogram.com/index.php?/topic/195042-*/)
+* [Space Dust](https://forum.kerbalspaceprogram.com/index.php?/topic/197723-*/)
+* [System Heat](https://forum.kerbalspaceprogram.com/index.php?/topic/193909-*/)
+* [Waterfall](https://forum.kerbalspaceprogram.com/index.php?/topic/196309-*/)
 
 
 ## Installation
@@ -75,10 +78,19 @@ There's no upstream, I'm (g)ROOT. :)
 	+ [CurseForge](https://kerbal.curseforge.com/projects/tweakscale)
 	+ [SpaceDock](https://spacedock.info/mod/127/TweakScale)
 	+ [Homepage](http://ksp.lisias.net/add-ons/TweakScale) on L Aerospace
-	+ [GitHub](https://github.com/net-lisias-ksp/TweakScale).
+	+ [GitHub](https://github.com/net-lisias-ksp/TweakScale)
 * Test Flight ([Agthorn](https://forum.kerbalspaceprogram.com/index.php?/profile/99662-agathorn/))
 	+ [Forum](https://forum.kerbalspaceprogram.com/index.php?/topic/99043-122-testflight-v180-01-may-2017-bring-flight-testing-to-ksp/) 
 	+ [Github](https://github.com/KSP-RO/TestFlight/releases)
+* Cryo Tanks ([Nertea](https://forum.kerbalspaceprogram.com/index.php?/profile/83952-nertea/))
+	+ [Forum](https://forum.kerbalspaceprogram.com/index.php?/topic/195042-*/)
+	+ [GitHub](https://github.com/post-kerbin-mining-corporation/CryoTanks)
+* Space Dust ([Nertea](https://forum.kerbalspaceprogram.com/index.php?/profile/83952-nertea/))
+	+ [Forum](https://forum.kerbalspaceprogram.com/index.php?/topic/197723-*/)
+	+ [GitHub](https://github.com/post-kerbin-mining-corporation/SpaceDust)
+* System Heat ([Nertea](https://forum.kerbalspaceprogram.com/index.php?/profile/83952-nertea/))
+	+ [Forum](https://forum.kerbalspaceprogram.com/index.php?/topic/193909-*/)
+	+ [GitHub](https://github.com/post-kerbin-mining-corporation/SystemHeat)
 * Waterfall ([Nertea](https://forum.kerbalspaceprogram.com/index.php?/profile/83952-nertea/))
 	+ [Forum](https://forum.kerbalspaceprogram.com/index.php?/topic/196309-*)
-		+ [GitHub](https://github.com/post-kerbin-mining-corporation/Waterfall).
+	+ [GitHub](https://github.com/post-kerbin-mining-corporation/Waterfall)
