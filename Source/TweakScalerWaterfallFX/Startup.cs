@@ -33,7 +33,7 @@ namespace TweakScaleCompanion.Frameworks.Waterfall
 		private void Awake()
 		{
 			if (KSPe.Util.SystemTools.Type.Exists.ByQualifiedName("Waterfall.Waterfall"))
-				using (KSPe.Util.SystemTools.Assembly.Loader a = new KSPe.Util.SystemTools.Assembly.Loader<Frameworks.Startup>())
+				using (KSPe.Util.SystemTools.Assembly.Loader a = new KSPe.Util.SystemTools.Assembly.Loader<Startup>())
 				{ 
 					a.LoadAndStartup("TweakScalerWaterfallFXIntegrator");
 					OK_TO_GO = true;

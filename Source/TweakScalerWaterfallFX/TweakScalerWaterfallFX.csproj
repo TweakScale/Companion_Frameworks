@@ -57,6 +57,7 @@
     <Compile Include="Integration.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="SanityCheck.cs" />
+    <Compile Include="Properties\Version.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TweakScaleCompanion_Frameworks\TweakScaleCompanion_Frameworks.csproj">

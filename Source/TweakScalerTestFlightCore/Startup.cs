@@ -22,7 +22,7 @@
 using UnityEngine;
 using KSPe.Annotations;
 
-namespace TweakScaleCompanion.Frameworks
+namespace TweakScaleCompanion.Frameworks.TestFlightCore
 {
 	[KSPAddon(KSPAddon.Startup.Instantly, true)]
 	internal class Startup : MonoBehaviour
@@ -32,6 +32,7 @@ namespace TweakScaleCompanion.Frameworks
 		[UsedImplicitly]
 		private void Start()
 		{
+			Log.force("TweakScalerTestFlightCore Version {0} is loaded.", Version.Text);
 			this.checkDependencies();
 			this.loadDLLs();
 		}
@@ -47,7 +48,7 @@ namespace TweakScaleCompanion.Frameworks
 
 		private void loadDLLs()
 		{
-			using (KSPe.Util.SystemTools.Assembly.Loader a = new KSPe.Util.SystemTools.Assembly.Loader<Frameworks.Startup>())
+			using (KSPe.Util.SystemTools.Assembly.Loader a = new KSPe.Util.SystemTools.Assembly.Loader<Startup>())
 				if (this.isTweakScale25 && KSPe.Util.SystemTools.Assembly.Exists.ByName("TestFlightCore"))
 					a.LoadAndStartup("TweakScalerTestFlightCore");
 		}

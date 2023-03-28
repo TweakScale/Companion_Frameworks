@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{C36749C4-A5E2-4C6B-87F6-404D0DB09EE5}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>TweakScalerTestFlightCore</RootNamespace>
+    <RootNamespace>TweakScaleCompanion.Frameworks.TweakScalerTestFlightCore</RootNamespace>
     <AssemblyName>TweakScalerTestFlightCore</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <BaseIntermediateOutputPath>..\..\obj\TweakScalerTestFlightCore</BaseIntermediateOutputPath>
@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Properties\Version.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TweakScaleCompanion_Frameworks\TweakScaleCompanion_Frameworks.csproj">
