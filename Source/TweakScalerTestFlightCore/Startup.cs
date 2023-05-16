@@ -50,7 +50,7 @@ namespace TweakScaleCompanion.Frameworks.TestFlightCore
 		{
 			using (KSPe.Util.SystemTools.Assembly.Loader a = new KSPe.Util.SystemTools.Assembly.Loader<Startup>())
 				if (this.isTweakScale25 && KSPe.Util.SystemTools.Assembly.Exists.ByName("TestFlightCore"))
-					a.LoadAndStartup("TweakScalerTestFlightCore");
+					a.LoadAndStartup("TweakScalerTestFlightCoreRescalable");
 		}
 	}
 }
