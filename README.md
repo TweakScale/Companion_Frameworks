@@ -24,11 +24,11 @@ Adds (up to date) TweakScale /L patches for some KSP Enhancing Add'Ons that need
 
 Currently supports:
 
-* [Test Flight](https://forum.kerbalspaceprogram.com/index.php?/topic/99043-*/)
-* [Cryo Tanks](https://forum.kerbalspaceprogram.com/index.php?/topic/195042-*/)
-* [Space Dust](https://forum.kerbalspaceprogram.com/index.php?/topic/197723-*/)
-* [System Heat](https://forum.kerbalspaceprogram.com/index.php?/topic/193909-*/)
-* [Waterfall](https://forum.kerbalspaceprogram.com/index.php?/topic/196309-*/)
+* Test Flight
+* Cryo Tanks
+* Space Dust
+* System Heat
+* Waterfall
 
 
 ## Installation
