@@ -42,14 +42,14 @@ namespace TweakScaleCompanion.Frameworks.TestFlightCore
 			if (KSPe.Util.SystemTools.Assembly.Exists.ByName("Scale"))
 			{ 
 				System.Reflection.Assembly assembly = KSPe.Util.SystemTools.Assembly.Find.ByName("Scale");
-				this.isTweakScale25 = (assembly.GetName().Version.CompareTo(new System.Version(2, 4, 7)) >= 0);
+				this.isTweakScale25 = (assembly.GetName().Version.CompareTo(new System.Version(2, 5, 0)) >= 0);
 			}
 		}
 
 		private void loadDLLs()
 		{
-			using (KSPe.Util.SystemTools.Assembly.Loader a = new KSPe.Util.SystemTools.Assembly.Loader<Startup>())
-				if (this.isTweakScale25 && KSPe.Util.SystemTools.Assembly.Exists.ByName("TestFlightCore"))
+			if (this.isTweakScale25 && KSPe.Util.SystemTools.Assembly.Exists.ByName("TestFlightCore"))
+				using (KSPe.Util.SystemTools.Assembly.Loader a = new KSPe.Util.SystemTools.Assembly.Loader<Startup>())
 					a.LoadAndStartup("TweakScalerTestFlightCoreRescalable");
 		}
 	}
