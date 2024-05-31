@@ -25,7 +25,7 @@ namespace TweakScaleCompanion.Frameworks
 	public static class LegalMamboJambo
 	{
 		public const string Company = "L Aerospace KSP Division";
-		public const string Copyright = "© 2021-2023 LisiasT";
+		public const string Copyright = "© 2021-2024 LisiasT";
 		public const string Product = "TweakScale Companion for Frameworks";
 		public const string Trademark = "TweakScale™, TweakScale Companion™ by LisiasT";
 	}
