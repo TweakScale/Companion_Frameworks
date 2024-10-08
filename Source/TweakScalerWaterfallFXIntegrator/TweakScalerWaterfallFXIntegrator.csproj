@@ -53,9 +53,8 @@
       <HintPath>..\..\..\..\..\..\..\LIB\plugins\Scale_Redist.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Waterfall">
-      <HintPath>..\..\..\..\..\..\..\LIB\plugins\Waterfall.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="Waterfall.0.10">
+      <HintPath>..\..\..\..\..\..\..\LIB\plugins\Waterfall.0.10.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
