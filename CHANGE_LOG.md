@@ -1,5 +1,9 @@
 # TweakScale Companion :: Frameworks :: Change Log
 
+* 2025-0903: 0.4.0.6 (LisiasT) for KSP >= 1.2.2
+	+ **FINALLY** fixes a glitch that was eluding me for years!
+	+ Closes issues:
+		- [#3](https://github.com/TweakScale/Companion_Frameworks/issues/3) Waterfall plumes "descales" on Revert to Launch!  
 * 2024-1008: 0.4.0.5 (LisiasT) for KSP >= 1.2.2
 	+ Update `TweakScaleCompanion.Frameworks.Waterfall` to cope with the changes made on Waterfall 0.10.0.0.
 	+ Works issues:
