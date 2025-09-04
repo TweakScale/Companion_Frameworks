@@ -1,6 +1,6 @@
 ﻿/*
 	This file is part of TweakScaleCompanion_Frameworks
-	© 2021-2024 LisiasT : http://lisias.net <support@lisias.net>
+	© 2021-2025 LisiasT : http://lisias.net <support@lisias.net>
 
 	THIS FILE is licensed to you under:
 
