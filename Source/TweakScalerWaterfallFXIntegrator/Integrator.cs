@@ -57,8 +57,11 @@ namespace TweakScaleCompanion.Frameworks.Waterfall.Integrator
 
 			this.originalFx.Clear();
 			foreach(ModuleWaterfallFX m in this.targetPartModules)
+			{
+				m.useRelativeScaling = true;
 				foreach (global::Waterfall.WaterfallEffect fx in m.FX)
 					this.originalFx.Add(new Data(fx));
+			}
 		}
 
 		void Notifier.Update()
