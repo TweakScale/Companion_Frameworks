@@ -33,10 +33,6 @@
       <HintPath>..\..\..\..\..\..\..\LIB\managed\1.2.2\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Scale_Redist.2.5">
-      <HintPath>..\..\..\..\..\..\..\LIB\plugins\Scale_Redist.2.5.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="TestFlightCore">
       <HintPath>..\..\..\..\..\..\..\LIB\plugins\TestFlightCore.dll</HintPath>
       <Private>False</Private>
@@ -47,6 +43,10 @@
     </Reference>
     <Reference Include="KSPe.Light.TweakScale">
       <HintPath>..\..\..\..\..\..\..\LIB\plugins\KSPe.Light.TweakScale.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Scale_Redist">
+      <HintPath>..\..\..\..\..\..\..\LIB\plugins\Scale_Redist.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>

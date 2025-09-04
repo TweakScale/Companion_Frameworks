@@ -55,6 +55,7 @@
     </Reference>
     <Reference Include="Waterfall.0.10">
       <HintPath>..\..\..\..\..\..\..\LIB\plugins\Waterfall.0.10.dll</HintPath>
+      <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
