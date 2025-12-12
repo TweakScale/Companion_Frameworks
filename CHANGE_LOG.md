@@ -1,5 +1,7 @@
 # TweakScale Companion :: Frameworks :: Change Log
 
+* 2025-1212: 0.4.0.7 (LisiasT) for KSP >= 1.2.2
+	+ Removes an unduly hard dependency. 
 * 2025-0903: 0.4.0.6 (LisiasT) for KSP >= 1.2.2
 	+ **FINALLY** fixes a glitch that was eluding me for years!
 	+ Closes issues:
