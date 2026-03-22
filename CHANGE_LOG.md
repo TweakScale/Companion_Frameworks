@@ -1,5 +1,8 @@
 # TweakScale Companion :: Frameworks :: Change Log
 
+* 2026-0321: 0.4.0.8 (LisiasT) for KSP >= 1.2.2
+	+ Fixes a terribly lame mistake on compiling the Waterfall support.
+		- Really, sometimes I think I'm start to onset dementia...
 * 2025-1212: 0.4.0.7 (LisiasT) for KSP >= 1.2.2
 	+ Removes an unduly hard dependency. 
 * 2025-0903: 0.4.0.6 (LisiasT) for KSP >= 1.2.2
