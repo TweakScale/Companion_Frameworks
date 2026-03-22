@@ -1,6 +1,6 @@
 ﻿/*
 	This file is part of KSPe, a component for TweakScaleCompanion_Frameworks
-	(C) 2018-21 Lisias T : http://lisias.net <support@lisias.net>
+	© 2021-2026 LisiasT : http://lisias.net <support@lisias.net>
 
 	TweakScaleCompanion_Frameworks is double licensed, as follows:
 		* SKL 1.0 : https://ksp.lisias.net/SKL-1_0.txt
@@ -25,7 +25,7 @@ namespace TweakScaleCompanion.Frameworks
 	public static class LegalMamboJambo
 	{
 		public const string Company = "L Aerospace KSP Division";
-		public const string Copyright = "© 2021-2025 LisiasT";
+		public const string Copyright = "© 2021-2026 LisiasT";
 		public const string Product = "TweakScale Companion for Frameworks";
 		public const string Trademark = "TweakScale™, TweakScale Companion™ by LisiasT";
 	}
